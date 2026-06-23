@@ -1,0 +1,20 @@
+.idea/
+database*
+**/node_modules
+/wp-content/uploads/*
+/wp-content/upgrade/*
+/wp-content/plugins/*
+/wp-content/mu-plugins/*
+/!wp-content/mu-plugins/mu-init.php
+/vendor/*
+/vendor
+wp-content/themes/profi.dev/dist/*
+wp-content/themes/profi.dev/vendor/*
+* copy*
+.env
+*/debug.log
+dump.zip
+uploads.zip
+yarn.lock
+package-json.lock
+composer.lock

@@ -1,0 +1,38 @@
+{
+  "name": "profi-dev-wp-theme",
+  "version": "1.0",
+  "description": "Profi.dev wordpress theme starter kit.",
+  "author": "tech@profi.dev",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint:js": "eslint --ext .js ./",
+    "lint:js:fix": "yarn lint:js --fix",
+    "lint:styles": "stylelint \"**/*.{css,scss}\"",
+    "lint:styles:fix": "yarn lint:styles --fix",
+    "docker:cli": "docker-compose exec back bash",
+    "docker:up": "docker-compose up",
+    "docker:rebuild": "docker-compose rm -f && docker-compose build",
+    "check:uploads": "docker-compose exec back bash -c 'wp eval-file --allow-root ./scripts/check-unused-uploads-files.php'",
+    "delete:revisions": "docker-compose exec back bash -c 'wp revisions clean -1 --allow-root --hard'",
+    "deploy:files": "docker-compose exec back bash -c 'cd /var/www/html/wp-content/ && zip -r uploads.zip uploads/* && wp --allow-root db export dump.sql && zip dump.zip dump.sql && rm -f dump.sql' && mv wp-content/uploads.zip . && mv wp-content/dump.zip .",
+    "dev": "vite",
+    "build": "cd wp-content/themes/profi.dev && vite build"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.39.1",
+    "globals": "^16.5.0"
+  },
+  "workspaces": [
+    "wp-content/themes/profi.dev"
+  ],
+  "engines": {
+    "node": ">= 20.1",
+    "npm": ">= 10.2",
+    "yarn": ">= 1.22"
+  },
+  "dependencies": {},
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

@@ -1,0 +1,288 @@
+{
+	"type": "project",
+	"name": "profi-dev/wp-theme",
+	"description": "Profi.dev wordpress theme starter kit.",
+	"license": "Commerce",
+	"authors": [
+		{
+			"name": "Profi.Dev",
+			"homepage": "https://profi.dev"
+		}
+	],
+	"autoload": {},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"ffraenz/private-composer-installer": true
+		},
+		"optimize-autoloader": true,
+		"preferred-install": "dist",
+		"sort-packages": true
+	},
+	"extra": {
+		"installer-paths": {
+			"wp-content/mu-plugins/{$name}/": [
+				"type:wordpress-muplugin",
+				"wpackagist-plugin/safe-svg",
+				"wpengine/advanced-custom-fields-pro"
+			],
+			"wp-content/plugins/{$name}/": [
+				"type:wordpress-plugin"
+			],
+			"wp-content/themes/{$name}/": [
+				"type:wordpress-theme"
+			],
+			"wp-content/{$name}/": [
+				"type:wordpress-dropin"
+			]
+		},
+		"wordpress-install-dir": "wordpress"
+	},
+	"scripts": {
+		"theme-install": [
+			"cd wp-content/themes/profi.dev && composer install --no-dev"
+		],
+		"post-root-package-install": [
+			"@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+		],
+		"post-install-cmd": [
+			"@theme-install"
+		],
+		"post-update-cmd": [
+			"@theme-install"
+		],
+		"pre-install-cmd": []
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		},
+		{
+			"type": "composer",
+			"url": "https://connect.advancedcustomfields.com"
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/memberpress",
+				"version": "1.12.14",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/szMHK7y84XG4Mx7/download/memberpress-scale-1.12.14.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/aioseo-image-seo",
+				"version": "1.2.2",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/8FrYNmoGpcsGg6f/download/aioseo-image-seo.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/aioseo-link-assistant",
+				"version": "1.1.11",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/xWaw998t4WKsTw6/download/aioseo-link-assistant.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/aioseo-news-sitemap",
+				"version": "1.0.20",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/D2Tp8kpWgKyiSrY/download/aioseo-news-sitemap.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/all-in-one-seo-pack-pro",
+				"version": "4.9.3",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/P8HpBJPyFaHrBj6/download/all-in-one-seo-pack-pro.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/cyclenorway-login-validation",
+				"version": "1.0.0",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/TyxnpgtrKF5xTfM/download/cyclenorway-login-validation.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/memberpress-account-nav-tabs",
+				"version": "1.0.3",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/GpjDAtiZLJtZLDg/download/memberpress-account-nav-tabs.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/memberpress-buddypress",
+				"version": "1.1.20",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/98azD88HDJRpEcb/download/memberpress-buddypress.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/memberpress-mailchimp-tags",
+				"version": "1.2.7",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/ZjiQz4rLwas7zeQ/download/memberpress-mailchimp-tags.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/memberpress-pdf-invoice",
+				"version": "1.2.0",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/WnmX7HZF6pMXdXY/download/memberpress-pdf-invoice.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/memberpress-social-login",
+				"version": "1.0.2",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/c3LDkdJtRTNGAC9/download/memberpress-social-login.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/translatepress-business",
+				"version": "1.7.6",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/LbCYx6ixrLQec3F/download/translatepress-business.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/translatepress-multilingual",
+				"version": "3.1.4",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/tz9fZMqzpdgcrDj/download/translatepress-multilingual.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/wp-rocket",
+				"version": "3.20.3",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/yNKxG56ferrt6NZ/download/wp-rocket.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "profidev/memberpress-importer",
+				"version": "1.6.21",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://o.profi.dev/s/6MCd8xjwKAkYWHt/download/memberpress-importer.zip"
+				}
+			}
+		}
+	],
+	"require": {
+		"php": ">=8.3",
+		"composer/installers": "^1.0 || ^2.0",
+		"ffraenz/private-composer-installer": "^5.0",
+		"profidev/aioseo-image-seo": "^1.2.2",
+		"profidev/aioseo-link-assistant": "^1.1.11",
+		"profidev/aioseo-news-sitemap": "^1.0.20",
+		"profidev/all-in-one-seo-pack-pro": "^4.9.3",
+		"profidev/cyclenorway-login-validation": "^1.0.0",
+		"profidev/memberpress": "^1.12",
+		"profidev/memberpress-account-nav-tabs": "^1.0.3",
+		"profidev/memberpress-buddypress": "^1.1.20",
+		"profidev/memberpress-importer": "^1.6",
+		"profidev/memberpress-mailchimp-tags": "^1.2.7",
+		"profidev/memberpress-pdf-invoice": "^1.2.0",
+		"profidev/memberpress-social-login": "^1.0.2",
+		"profidev/translatepress-business": "^1.7.6",
+		"profidev/translatepress-multilingual": "^3.1.4",
+		"profidev/wp-rocket": "^3.20.3",
+		"wpackagist-plugin/all-in-one-seo-pack": "^4.9",
+		"wpackagist-plugin/complianz-gdpr": "^7.0",
+		"wpackagist-plugin/folders": "^3.1.6",
+		"wpackagist-plugin/insert-headers-and-footers": "^2.3",
+		"wpackagist-plugin/mailin": "^3.3",
+		"wpackagist-plugin/migrate-guru": "^6.28",
+		"wpackagist-plugin/redis-cache": "^2.7.0",
+		"wpackagist-plugin/safe-svg": "^2.2.5",
+		"wpackagist-plugin/seo-by-rank-math": "^1.0.219",
+		"wpackagist-plugin/simple-cloudflare-turnstile": "1.38.0",
+		"wpackagist-plugin/translatepress-multilingual": "^3.1",
+		"wpackagist-plugin/users-customers-import-export-for-wp-woocommerce": "^2.7",
+		"wpackagist-plugin/webp-converter-for-media": "^6.5.5",
+		"wpackagist-plugin/wp-file-manager": "^8.0",
+		"wpackagist-plugin/wp-mail-smtp": "4.7.1",
+		"wpengine/advanced-custom-fields-pro": "^6.7.0.2"
+	},
+	"require-dev": {
+		"wpackagist-plugin/query-monitor": "^3.16.3",
+		"wpackagist-plugin/debug-bar": "^1.1.6"
+	}
+}

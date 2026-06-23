@@ -1,0 +1,18 @@
+{
+	"recommendations": [
+			"usernamehw.errorlens",
+			"attilabuti.mustache-syntax-vscode",
+			"ms-vscode-remote.remote-wsl",
+			"dbaeumer.vscode-eslint",
+			"esbenp.prettier-vscode",
+			"gencer.html-slim-scss-css-class-completion",
+			"sibiraj-s.vscode-scss-formatter",
+			"streetsidesoftware.code-spell-checker",
+			"eamodio.gitlens",
+			"GitHub.copilot",
+			"GitHub.copilot-chat",
+			"bmewburn.vscode-intelephense-client",
+			"Natizyskunk.sftp",
+			"mikestead.dotenv",
+	]
+}
