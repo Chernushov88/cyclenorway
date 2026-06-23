@@ -1,0 +1,83 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+	.profidev-route-regions {
+		margin: var(--theme-section-gap) 0;
+
+        .regions-list {
+            --horizontal-gap: #{mixins.toRem(20px)};
+            --vertical-gap: #{mixins.toRem(20px)};
+            --number-of-items: 5;
+
+            @include mixins.breakpoint(lg) {
+                --number-of-items: 3;
+            }
+
+            @include mixins.breakpoint(md) {
+                --number-of-items: 1;
+            }
+        }
+
+        .region-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: #{mixins.toRem(10px)};
+            gap: #{mixins.toRem(10px)};
+            min-height: #{mixins.toRem(305px)};
+            height: 100%;
+            background-color: var(--wp--preset--color--color-3);
+            color: var(--wp--preset--color--white);
+            border-radius: var(--theme-br-md);
+            overflow: hidden;
+            z-index: var(--base-z-index);
+
+            @include mixins.breakpoint(md) {
+                min-height: #{mixins.toRem(202px)};
+            }
+
+            h3 {
+                font-size: var(--theme-fs-h5);
+
+                @include mixins.breakpoint(md) {
+                    font-size: var(--theme-fs-h4);
+                    max-width: #{mixins.toRem(150px)};
+                }
+            }
+
+            p {
+                font-size: var(--theme-fs-btn);
+
+                @include mixins.breakpoint(md) {
+                    max-width: #{mixins.toRem(150px)};
+                }
+            }
+        }
+
+        .theme-image-wrapper {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+
+            img {
+                width: 100%;
+                height: 100%;
+				object-fit: none;
+            	object-position: top center;
+
+				 @include mixins.breakpoint(md) {
+					object-position: top right;
+					object-fit: contain;
+				}
+            }
+
+            .copyright {
+                display: none;
+            }
+        }
+	}
+}

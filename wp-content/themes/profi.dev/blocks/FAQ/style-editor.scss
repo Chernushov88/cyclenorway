@@ -1,0 +1,15 @@
+@use "styles";
+@use "~css/_mixins.scss" as mixins;
+
+div.is-root-container {
+	@extend %block;
+
+	[data-type="profidev/accordion-wrapper"] {
+		width: calc(50% - #{mixins.toRem(30px)});
+
+		.accordions-wrapper {
+			width: 100%;
+		}
+	}
+	// width: calc(50% - #{mixins.toRem(30px)});
+}

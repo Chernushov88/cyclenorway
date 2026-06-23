@@ -1,0 +1,53 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+	.profidev-blog-posts {
+		margin: #{mixins.toRem(40px)} 0 var(--theme-section-gap);
+
+		.category-list {
+            display: flex;
+            flex-wrap: wrap;
+            color: var(--wp--preset--color--color-1);
+            margin-bottom: #{mixins.toRem(20px)};
+
+            a {
+                color: inherit;
+                display: block;
+                font-size: var(--theme-fs-md);
+                font-weight: 500;
+                padding: #{mixins.toRem(13px)} #{mixins.toRem(20px)};
+                opacity: 0.63;
+                transition: opacity var(--theme-transition);
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            li.active {
+                a {
+                    opacity: 1;
+                }
+            }
+        }
+
+		.post-list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: #{mixins.toRem(35px)} #{mixins.toRem(30px)};
+
+			@include mixins.breakpoint(md) {
+				gap: #{mixins.toRem(20px)};
+			}
+		}
+
+		.post-item {
+			width: calc(50% - #{mixins.toRem(15px)});
+
+			@include mixins.breakpoint(lg) {
+				width: 100%;
+			}
+		}
+	}
+}

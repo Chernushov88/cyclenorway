@@ -1,0 +1,8 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+	.profidev-route-cards {
+		margin: var(--theme-section-gap) 0;
+	}
+}

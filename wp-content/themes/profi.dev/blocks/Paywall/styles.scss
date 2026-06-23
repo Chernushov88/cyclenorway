@@ -1,0 +1,383 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+    .profidev-paywall {
+        margin: var(--theme-section-gap) 0;
+
+        .paywall-main {
+            background-color: var(--wp--preset--color--color-7);
+            border-radius: var(--theme-br-lg);
+            padding: #{mixins.toRem(32px)};
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: #{mixins.toRem(24px)};
+
+            @include mixins.breakpoint(sm) {
+                padding: #{mixins.toRem(32px)} #{mixins.toRem(16px)};
+            }
+
+            .theme-text-element {
+                width: 48%;
+
+                @include mixins.breakpoint(lg) {
+                    width: 100%;
+                    margin-bottom: #{mixins.toRem(24px)};
+                }
+
+                > * {
+                    margin: #{mixins.toRem(16px)} 0;
+                }
+
+                .title {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: #{mixins.toRem(12px)};
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: #{mixins.toRem(24px)};
+                        height: #{mixins.toRem(24px)};
+                        mask: var(--theme-icon-lock-outline) no-repeat center / contain;
+                        background-color: var(--wp--preset--color--color-1);
+                        flex-shrink: 0;
+                        margin-top: #{mixins.toRem(5px)};
+                    }
+                }
+
+                .icon-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: #{mixins.toRem(8px)};
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        gap: #{mixins.toRem(16px)};
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            width: #{mixins.toRem(16px)};
+                            height: #{mixins.toRem(16px)};
+                            mask: var(--theme-icon-check) no-repeat center / contain;
+                            background-color: var(--wp--preset--color--color-1);
+                            flex-shrink: 0;
+                        }
+                    }
+                }
+            }
+
+					profidev-paywall {
+						width: 48%;
+						@include mixins.breakpoint(lg) {
+							width: 100%;
+						}
+						.paywall-form {
+
+							&-row {
+								position: relative;
+								margin-bottom: #{mixins.toRem(16px)};
+
+								input {
+									position: absolute;
+									opacity: 0;
+									width: 0;
+									height: 0;
+									z-index: -1;
+
+									&:checked + .field-radio {
+										border-color: var(--wp--preset--color--color-4);
+
+										.radio {
+											background-color: var(--wp--preset--color--black);
+
+											&::before {
+												opacity: 1;
+											}
+										}
+									}
+								}
+							}
+
+							.field-radio {
+								position: relative;
+								display: flex;
+								align-items: center;
+								gap: #{mixins.toRem(24px)};
+								border: var(--theme-border) var(--theme-border-color);
+								border-radius: var(--theme-br-lg);
+								padding: #{mixins.toRem(10px)} #{mixins.toRem(16px)};
+								transition: border-color var(--theme-transition);
+								cursor: pointer;
+
+								.radio {
+									position: relative;
+									width: #{mixins.toRem(22px)};
+									height: #{mixins.toRem(22px)};
+									border: var(--theme-border) var(--wp--preset--color--black);
+									border-radius: 50%;
+									flex-shrink: 0;
+									transition: background-color var(--theme-transition);
+
+									&::before {
+										content: '';
+										position: absolute;
+										top: 50%;
+										left: 50%;
+										transform: translate(-50%, -50%);
+										width: 30%;
+										height: 30%;
+										background-color: var(--wp--preset--color--white);
+										border-radius: 50%;
+										opacity: 0;
+										transition: opacity var(--theme-transition);
+									}
+								}
+
+								.label {
+									flex-grow: 1;
+
+									h3 {
+										font-family: var(--wp--preset--font-family--primary);
+										font-size: var(--theme-fs-xl);
+										font-weight: 600;
+									}
+								}
+
+								.price {
+									text-align: right;
+									font-size: var(--theme-fs-md);
+									flex-shrink: 0;
+
+									strong {
+										display: block;
+										font-size: var(--theme-fs-h5);
+									}
+								}
+
+								.badge {
+									position: absolute;
+									top: 0;
+									right: 0;
+									transform: translate(10%, -50%);
+									background-color: var(--wp--preset--color--color-4);
+									border-radius: var(--theme-br-md);
+									padding: #{mixins.toRem(4px)} #{mixins.toRem(8px)};
+									font-size: var(--theme-fs-sm);
+									font-weight: 700;
+									text-transform: uppercase;
+								}
+							}
+
+							.theme-button-primary {
+								width: 100%;
+								font-size: var(--theme-fs-xl);
+								font-weight: 600;
+							}
+
+							.form-text {
+								margin: #{mixins.toRem(16px)} 0 0;
+								text-align: center;
+
+								a {
+									color: inherit;
+									font-weight: 600;
+									text-decoration: underline;
+								}
+							}
+						}
+					}
+        }
+
+        .paywall-newlatters {
+            background-color: var(--wp--preset--color--color-8);
+            border-radius: var(--theme-br-lg);
+            padding: #{mixins.toRem(32px)};
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: #{mixins.toRem(48px)};
+
+            @include mixins.breakpoint(sm) {
+                padding: #{mixins.toRem(32px)} #{mixins.toRem(16px)};
+            }
+
+            .theme-text-element {
+                width: 40%;
+
+                @include mixins.breakpoint(lg) {
+                    width: 100%;
+                    margin-bottom: #{mixins.toRem(24px)};
+                }
+
+                > * {
+                    margin: #{mixins.toRem(16px)} 0;
+                }
+
+                .title {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: #{mixins.toRem(12px)};
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: #{mixins.toRem(24px)};
+                        height: #{mixins.toRem(24px)};
+                        mask: var(--theme-icon-mail) no-repeat center / contain;
+                        background-color: var(--wp--preset--color--color-1);
+                        flex-shrink: 0;
+                        margin-top: #{mixins.toRem(5px)};
+                    }
+                }
+            }
+
+            .newslatter-form {
+                width: 56%;
+
+                @include mixins.breakpoint(lg) {
+                    width: 100%;
+                }
+
+                .newlatters-list {
+                    margin-bottom: #{mixins.toRem(24px)};
+
+                    @include mixins.breakpoint(xl) {
+                        --horizontal-gap: #{mixins.toRem(16px)};
+                    }
+
+                    @include mixins.breakpoint(lg) {
+                        --number-of-items: 3;
+                    }
+
+                    @include mixins.breakpoint(md) {
+                        --number-of-items: 1;
+                    }
+
+                    .item {
+                        display: flex;
+                        align-items: center;
+                        gap: #{mixins.toRem(16px)};
+                        border-left: var(--theme-border) var(--wp--preset--color--color-1);
+                        padding-left: #{mixins.toRem(16px)};
+
+                        @include mixins.breakpoint(xl) {
+                           gap: #{mixins.toRem(8px)};
+                           padding-left: #{mixins.toRem(8px)};
+                        }
+
+                        @include mixins.breakpoint(lg) {
+                           gap: #{mixins.toRem(16px)};
+                           padding-left: #{mixins.toRem(16px)};
+                        }
+                    }
+
+                    .icon {
+                        width: #{mixins.toRem(40px)};
+                        height: #{mixins.toRem(40px)};
+                        flex-shrink: 0;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+
+                        .copyright {
+                            display: none;
+                        }
+                    }
+
+                    span {
+                        font-weight: 600;
+
+                        br {
+                            @include mixins.breakpoint(md) {
+                                display: none;
+                            }
+                        }
+
+                    }
+                }
+
+                .form-block {
+                    input[type=email] {
+                        width: 100%;
+                        padding: #{mixins.toRem(12px)} #{mixins.toRem(16px)};
+                        border: var(--theme-border) var(--theme-border-color);
+                        border-radius: var(--theme-br-lg);
+                        margin-bottom: #{mixins.toRem(8px)};
+                    }
+
+                    .theme-button-primary {
+                        width: 100%;
+                        background-color: var(--wp--preset--color--color-1);
+                        color: var(--wp--preset--color--white);
+                    }
+
+                    p {
+                        text-align: center;
+                        margin: #{mixins.toRem(16px)} 0 0;
+                    }
+                }
+            }
+        }
+
+        .paywall-icon-list {
+            background-color: var(--wp--preset--color--color-2);
+            padding: #{mixins.toRem(64px)} 0;
+
+            @include mixins.breakpoint(xl) {
+                padding: #{mixins.toRem(48px)} 0;
+            }
+
+            .icon-list {
+                --number-of-items: 4;
+
+                @include mixins.breakpoint(lg) {
+                    --number-of-items: 2;
+                }
+
+                @include mixins.breakpoint(500px) {
+                    --number-of-items: 1;
+                }
+
+                .item {
+                    display: flex;
+                    align-items: center;
+                    gap: #{mixins.toRem(16px)};
+                }
+
+                .icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: #{mixins.toRem(50px)};
+                    height: #{mixins.toRem(50px)};
+                    flex-shrink: 0;
+                    border-radius: 50%;
+                    // background-color: var(--wp--preset--color--color-7);
+
+                    img {
+                        width: 55%;
+                        height: 55%;
+                        object-fit: contain;
+                    }
+
+                    .copyright {
+                        display: none;
+                    }
+                }
+
+                .theme-text-element {
+                    > * {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

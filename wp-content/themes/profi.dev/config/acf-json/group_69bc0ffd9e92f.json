@@ -1,0 +1,211 @@
+{
+    "key": "group_69bc0ffd9e92f",
+    "title": "Template Part",
+    "fields": [
+        {
+            "key": "field_69bc0ffd0bea9",
+            "label": "Template",
+            "name": "template",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "single-route-hero": "Single Route Hero",
+                "single-route-map": "Single Route Map",
+                "single-route-content": "Single Route Content",
+                "single-route-gallery-grid": "Single Route Gallery",
+                "single-route-testimonials": "Single Route Testimonials",
+                "single-route-more-information": "Single Route More Information",
+                "single-route-gallery-slider": "Single Route Gallery Slider",
+                "single-route-youtube": "Single Route YouTube",
+                "overview-route-hero": "Overview Route Hero",
+                "overview-route-map": "Overview Route Map",
+                "overview-route-info-list": "Overview Route Info List",
+                "overview-route-testimonial": "Overview Route Testimonial",
+                "overview-route-recommendation-list": "Overview Route Recommendation",
+                "overview-route-useful-links": "Overview Route Useful Links",
+                "overview-route-icon-list": "Overview Route Icon List",
+                "overview-route-terms-notice": "Overview Route Terms Notice",
+                "overview-route-video": "Overview Route Video"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69bd55b32c632",
+            "label": "Single Route Content",
+            "name": "single_route_content",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69bc0ffd0bea9",
+                        "operator": "==",
+                        "value": "single-route-content"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "more-about": "More About",
+                "more-about-second": "More About Second",
+                "highlights": "Highlights",
+                "must-know": "Must Know",
+                "accommodation": "Accommodation",
+                "transport": "Transport",
+                "safety": "Safety"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69c5109613614",
+            "label": "Useful Links",
+            "name": "useful_links_content",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69bc0ffd0bea9",
+                        "operator": "==",
+                        "value": "overview-route-useful-links"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "<p><a href=\"https:\/\/www.stay22.com\/allez\/booking?aid=mtolleyas&amp;campaign=cyclenorway-en-northofthesun2&amp;product=lma&amp;habl=true&amp;isinc=false&amp;sid22=xlrPQpJQEtSLwSwb&amp;conmeth=normal&amp;plng=en-GB&amp;pageCategory=travel&amp;lmaID=68f6363b636e166106b6226c&amp;source=direct&amp;medium=deeplink&amp;address=Norway&amp;link=http%3A%2F%2Fbooking.com%2F\" target=\"_blank\" rel=\"noopener\">Booking.com<\/a> – for accommodation options across Norway<\/p>\r\n\t<p><a href=\"https:\/\/entur.no\" target=\"_blank\" rel=\"noopener\" >Entur app<\/a> – for planning public transport trips around Norway<\/p>\r\n\t<p><a href=\"https:\/\/www.vegvesen.no\/en\/traffic-information\/traffic-information\/ferry\/\" target=\"_blank\" rel=\"noopener\" >Ferries<\/a> – routes, timetables and information by Statens Vegvesen<\/p>\r\n\t<p><a href=\"https:\/\/cyclenorway.com\/wild-camping\/\" target=\"_blank\" rel=\"noopener\">Wild camping etiquette<\/a> – important to know<\/p>",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_69c510d413615",
+            "label": "Terms Notice",
+            "name": "terms_notice",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69bc0ffd0bea9",
+                        "operator": "==",
+                        "value": "overview-route-terms-notice"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_69c510f013616",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Keep in mind",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_69c510fa13617",
+                    "label": "Content",
+                    "name": "content",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "All cycling routes published on CYCLENORWAY.com are simply a planning resource to be used as a point of inspiration in conjunction with your own due-diligence. All route guidelines were prepared under diligent research. However, we can never for certain insure the complete accuracy of the routes. Cycling in Norway is in general very safe. Nevertheless, should you choose to cycle this route you do so at your own risk.",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "profidev\/template-part"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1779451163
+}

@@ -1,0 +1,183 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+    .profidev-reviews{
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        padding: var(--theme-section-gap) 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--wp--preset--color--color-1);
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .theme-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: #{mixins.toRem(70px)};
+            color: var(--wp--preset--color--white);
+        }
+
+        .theme-grid {
+            --horizontal-gap: #{mixins.toRem(60px)};
+            --vertical-gap: #{mixins.toRem(24px)};
+            --number-of-items: 3;
+
+            @include mixins.breakpoint(lg) {
+                --number-of-items: 1;
+            }
+
+            .item {
+                position: relative;
+                padding: 3%;
+                display: flex;
+                flex-direction: column;
+
+                @include mixins.breakpoint(lg) {
+                    display: grid;
+                    grid-template-columns: #{mixins.toRem(180px)} 1fr;
+                    grid-template-areas:
+                        "author review"
+                        "location review"
+                        "stars review";
+                    column-gap: #{mixins.toRem(30px)};
+                    row-gap: #{mixins.toRem(8px)};
+                    align-items: start;
+                }
+
+                
+                @include mixins.breakpoint(md) {
+                    display: flex;
+                }
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: var(--wp--preset--color--color-2);
+                    opacity: 0.7;
+                    z-index: -1;
+                }
+
+                .review {
+                    margin: 0;
+                    font-style: italic;
+                    flex-grow: 1;
+
+                    @include mixins.breakpoint(lg) {
+                        grid-area: review;
+                        flex-grow: unset;
+                    }
+                }
+
+                .stars {
+                    display: flex;
+                    gap: #{mixins.toRem(5px)};
+                    margin-top: #{mixins.toRem(20px)};
+
+                    @include mixins.breakpoint(lg) {
+                        grid-area: stars;
+                        margin-top: #{mixins.toRem(10px)};
+                    }
+
+                    .star {
+                        width: #{mixins.toRem(20px)};
+                        height: #{mixins.toRem(20px)};
+                        display: block;
+                        mask-image: #{mixins.svg-encode('<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 640 640"><path fill="rgb(255, 212, 59)" d="M341.5 45.1C337.4 37.1 329.1 32 320.1 32C311.1 32 302.8 37.1 298.7 45.1L225.1 189.3L65.2 214.7C56.3 216.1 48.9 222.4 46.1 231C43.3 239.6 45.6 249 51.9 255.4L166.3 369.9L141.1 529.8C139.7 538.7 143.4 547.7 150.7 553C158 558.3 167.6 559.1 175.7 555L320.1 481.6L464.4 555C472.4 559.1 482.1 558.3 489.4 553C496.7 547.7 500.4 538.8 499 529.8L473.7 369.9L588.1 255.4C594.5 249 596.7 239.6 593.9 231C591.1 222.4 583.8 216.1 574.8 214.7L415 189.3L341.5 45.1z"/></svg>')};
+                        background-color: var(--theme-link-color);
+                        mask-position: center;
+                        mask-repeat: no-repeat;
+                        mask-size: contain;
+                    }
+                }
+
+                .author {
+                    font-size: var(--theme-fs-h5);
+                    font-family: var(--wp--preset--font-family--secondary);
+                    font-weight: 700;
+                    margin-top: #{mixins.toRem(25px)};
+                    margin-bottom: #{mixins.toRem(6px)};
+
+                    @include mixins.breakpoint(lg) {
+                        grid-area: author;
+                        margin-top: 0;
+                    }
+                }
+
+                .location {
+                    margin: 0;
+
+                    @include mixins.breakpoint(lg) {
+                        grid-area: location;
+                    }
+                }
+
+                .bg-element-top,
+                .bg-element-bottom {
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: #{mixins.toRem(20px)};
+                    z-index: -1;
+
+                    @include mixins.breakpoint(lg) {
+                        display: none;
+                    }
+                }
+
+                .bg-element-top svg,
+                .bg-element-bottom svg{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    fill: var(--wp--preset--color--white);
+                }
+
+                .bg-element-top {
+                    top: 0;
+                }
+
+                .bg-element-bottom {
+                    bottom: 0;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .theme-image-wrapper:has(.bg-image) {
+            position: absolute;
+            top: -15%;
+            left: 0;
+            width: 100%;
+            height: 130%;
+            z-index: -1;
+            max-width: unset;
+            transform: translateY(0);
+            will-change: transform;
+
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+        }
+    }
+}

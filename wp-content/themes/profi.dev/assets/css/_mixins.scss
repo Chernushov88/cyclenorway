@@ -1,0 +1,121 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:string";
+@use "sass:math";
+
+$breakpoints: (
+	"xxl": 1440px,
+	"xl": 1200px,
+	"lg": 992px,
+	"md": 768px,
+	"sm": 576px
+) !default;
+
+@mixin breakpoint($name, $param: 'max-width', $to: null) {
+	@if $param == 'between' {
+		@if map.has-key($breakpoints, $to) {
+			@media (min-width: #{map.get($breakpoints, $name)}) and (max-width: #{map.get($breakpoints, $to)}) {
+			  @content;
+			}
+		}
+	}
+	@else {
+		@if not map.has-key($breakpoints, $name) {
+			@media (#{$param}: #{$name}) {
+				@content;
+			}
+		} @else {
+			@media (#{$param}: #{map.get($breakpoints, $name)}) {
+				@content;
+			}
+		}
+	}
+}
+
+@mixin container-breakpoint($container, $name, $param: 'max-width', $to: null) {
+	@if $param == 'between' {
+		@if map.has-key($breakpoints, $to) {
+			@container #{$container} (min-width: #{map.get($breakpoints, $name)}) and (max-width: #{map.get($breakpoints, $to)}) {
+				@content;
+			}
+		}
+	}
+	@else {
+		@if not map.has-key($breakpoints, $name) {
+			@container #{$container} (#{$param}: #{$name}) {
+				@content;
+			}
+		} @else {
+			@container #{$container} (#{$param}: #{map.get($breakpoints, $name)}) {
+				@content;
+			}
+		}
+	}
+}
+
+@function toRem($pxValue) {
+	@return math.div($pxValue, 16px) * 1rem;
+}
+
+@function svg-encode($svg) {
+	$svgxmlns: ' xmlns="http://www.w3.org/2000/svg"';
+	@if not string.index($svg, $svgxmlns) {
+		$svg: string.insert($svg, $svgxmlns, 5);
+	}
+
+	$encode: (
+		'"': "%22",
+		"#": "%23",
+		"%": "%25",
+		"<": "%3C",
+		">": "%3E",
+		"{": "%7B",
+		"}": "%7D",
+	);
+
+	$string: "";
+	$character: "";
+
+	@for $i from 1 through string.length($svg) {
+		$character: string.slice($svg, $i, $i);
+
+		@if list.index(map.keys($encode), $character) {
+			$character: map.get($encode, $character);
+		}
+
+		$string: $string + $character;
+	}
+
+	@return url("data:image/svg+xml,#{$string}");
+}
+
+@function strip-units($number) {
+  @return math.div($number, ($number * 0 + 1));
+}
+
+
+@mixin initFonts($family, $files, $basePath: "../fonts") {
+  @each $fileKey, $opts in $files {
+    $weight: map.get($opts, weight);
+    $style: if(map.has-key($opts, style), map.get($opts, style), normal);
+    $display: if(map.has-key($opts, display), map.get($opts, display), swap);
+
+    $fileName: if(
+      map.has-key($opts, file),
+      map.get($opts, file),
+      "#{$family}-#{$fileKey}"
+    );
+
+    @font-face {
+      font-family: $family;
+      src: url("#{$basePath}/#{$fileName}.woff2") format("woff2");
+
+      font-style: $style;
+      font-display: $display;
+
+      @if $weight != null {
+        font-weight: $weight;
+      }
+    }
+  }
+}

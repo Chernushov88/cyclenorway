@@ -1,0 +1,116 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+	.profidev-cards-with-icons {
+		margin: var(--theme-route-section-gap) 0;
+
+		.theme-text-element {
+			margin-bottom: #{mixins.toRem(40px)};
+
+			@include mixins.breakpoint(md) {
+				margin-bottom: #{mixins.toRem(30px)};
+			}
+
+			p {
+				opacity: 0.77;
+			}
+		}
+
+		.theme-grid {
+			--horizontal-gap: #{mixins.toRem(10px)};
+			--vertical-gap: #{mixins.toRem(20px)};
+			--number-of-items: 4;
+
+			@include mixins.breakpoint(md) {
+				--number-of-items: 2;
+			}
+
+			a.list-item {
+				text-decoration: none;
+				color: var(--wp--preset--color--color-1);
+				display: flex;
+				flex-direction: column;
+				gap: #{mixins.toRem(20px)};
+			}
+
+			.icon {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				min-height: #{mixins.toRem(121px)};
+				border-radius: var(--theme-br-md);
+				padding: #{mixins.toRem(10px)};
+				background-color: var(--wp--preset--color--color-2);
+				position: relative;
+
+				.copyright {
+					display: none;
+				}
+
+				img {
+					width: #{mixins.toRem(35px)};
+					height: #{mixins.toRem(35px)};
+					object-fit: contain;
+				}
+			}
+
+			h3 {
+				font-weight: 600;
+				margin: 0;
+				padding-right: #{mixins.toRem(20px)};
+			}
+		}
+
+		.restricted-tooltip {
+
+			.restricted-icon {
+				display: block;
+				width: #{mixins.toRem(16px)};
+				height: #{mixins.toRem(16px)};
+				mask: var(--theme-icon-lock) no-repeat center / contain;
+				background-color: var(--wp--preset--color--color-1);
+				cursor: pointer;
+				position: absolute;
+				left: #{mixins.toRem(20px)};
+				bottom: #{mixins.toRem(20px)};
+			}
+
+			&[data-tooltip] {
+
+				&::after {
+					content: attr(data-tooltip);
+					position: absolute;
+					bottom: #{mixins.toRem(40px)};
+					left: #{mixins.toRem(20px)};
+					background-color: var(--wp--preset--color--black);
+					color: var(--wp--preset--color--white);
+					padding: #{mixins.toRem(6px)} #{mixins.toRem(8px)};
+					border-radius: var(--theme-br-sm);
+					font-size: var(--theme-fs-sm);
+					opacity: 0;
+					visibility: hidden;
+					transition: opacity var(--theme-transition);
+				}
+
+				&:hover::after {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+
+		.cards-dark {
+			.theme-grid {
+				.icon {
+					background-color: var(--wp--preset--color--color-3);
+				}
+
+				.restricted-icon {
+					background-color: var(--wp--preset--color--white);
+				}
+			}
+		}
+	}
+}

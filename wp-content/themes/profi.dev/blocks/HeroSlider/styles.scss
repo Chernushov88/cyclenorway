@@ -1,0 +1,134 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+@use "swiper/css";
+@use "swiper/css/effect-fade";
+
+%block {
+    .profidev-hero-slider {
+        overflow: hidden;
+
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+
+            .swiper-slide {
+                height: auto;
+            }
+
+            .slide-content {
+                position: relative;
+                display: flex;
+                align-items: center;
+                min-height: 80vh;
+                height: 100%;
+                z-index: 0;
+                padding: var(--theme-fallback-header-height) 0;
+                background-color: var(--wp--preset--color--color-3);
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: calc(100% - #{mixins.toRem(20px)});
+                    height: calc(100% - #{mixins.toRem(20px)});
+                    background-color: var(--wp--preset--color--black);
+                    opacity: 0.15;
+                    z-index: -1;
+                    pointer-events: none;
+                }
+            }
+
+            .theme-image-wrapper {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .copyright {
+                    bottom: #{mixins.toRem(20px)};
+
+                    @include mixins.breakpoint(sm) {
+                        bottom: #{mixins.toRem(5px)};
+                        left: var(--theme-container-padding);
+                    }
+
+                    &::before {
+                        font-size: var(--theme-fs-h4);
+                    }
+                }
+            }
+
+            .theme-text-element {
+                max-width: #{mixins.toRem(455px)};
+                font-size: var(--theme-fs-xl);
+                color: var(--wp--preset--color--white);
+            }
+
+            .theme-slider-controls {
+                position: static;
+                margin: 0;
+
+                @include mixins.breakpoint(sm) {
+                   position: absolute;
+                   bottom: #{mixins.toRem(40px)};
+                   width: 100%;
+                   padding: 0 var(--theme-container-padding);
+                   z-index: calc(var(--base-z-index) + 1);
+                }
+
+                .slider-button {
+                   
+                    @media (min-width: calc(map.get(mixins.$breakpoints, sm) + 1px)) {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        z-index: calc(var(--base-z-index) + 1);
+                    }
+
+                    &::before {
+                        background-color: var(--wp--preset--color--white);
+                    }
+
+                    &.prev {
+                        @media (min-width: calc(map.get(mixins.$breakpoints, sm) + 1px)) {
+                            left: #{mixins.toRem(15px)};
+                        }
+                    }
+
+                    &.next {
+                        @media (min-width: calc(map.get(mixins.$breakpoints, sm) + 1px)) {
+                            right: #{mixins.toRem(15px)};
+                        }
+                    }
+                }
+
+                .slider-pagination {
+
+                    @media (min-width: calc(map.get(mixins.$breakpoints, sm) + 1px)) {
+                        position: absolute;
+                        bottom: #{mixins.toRem(40px)};
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: calc(var(--base-z-index) + 1);
+                    }
+
+                    .swiper-pagination-bullet {
+                        background-color: var(--wp--preset--color--white);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@use "styles";
+
+div.is-root-container {
+	@extend %block;
+
+	.profidev-hero-slider .hero-slider {
+		.swiper-wrapper {
+			> .wp-block-profidev-hero-slide {
+				flex-shrink: 0;
+				width: 100%!important;
+				height: auto;
+				position: relative;
+				display: block;
+				z-index: -1;
+				pointer-events: none;
+
+				&.has-child-selected {
+					z-index: 9!important;
+					pointer-events: none!important;
+				}
+
+				&.is-selected,
+				&.swiper-slide-active {
+					z-index: 10!important;
+					pointer-events: auto!important;
+				}
+
+				.swiper-slide {
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			> .block-list-appender {
+				bottom: #{toRem(10px)};
+				z-index: 1000;
+			}
+
+			.swiper-slide {
+				height: 100%;
+				pointer-events: auto;
+			}
+		}
+
+		.swiper-backface-hidden .wp-block-profidev-hero-slide {
+			transform: translateZ(0);
+			backface-visibility: hidden;
+		}
+	}
+}

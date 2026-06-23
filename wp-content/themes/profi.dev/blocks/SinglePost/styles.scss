@@ -1,0 +1,101 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+	.profidev-single-post {
+		margin: calc(var(--theme-fallback-header-height) + #{mixins.toRem(40px)}) 0 var(--theme-section-gap);
+
+		.post-info {
+			--gap-post-info: #{mixins.toRem(15px)};
+			display: flex;
+			align-items: center;
+			gap: var(--gap-post-info);
+
+			li {
+				position: relative;
+
+				&:not(:last-child) {
+					&::after {
+						content: "";
+						position: absolute;
+						top: 0;
+						right: calc(var(--gap-post-info) / -2);
+						display: block;
+						width: #{mixins.toRem(1px)};
+						height: 100%;
+						background-color: var(--theme-border-color);
+					}
+				}
+			}
+		}
+
+		.post-thumb {
+			width: 100%;
+		}
+
+		.post-content {
+			max-width: #{mixins.toRem(800px)};
+			margin: #{mixins.toRem(80px)} auto;
+
+			@include mixins.breakpoint(md) {
+				margin: #{mixins.toRem(40px)} auto;
+			}
+
+			> .entry-content {
+				> * {
+					margin: #{mixins.toRem(20px)} 0;
+
+					@include mixins.breakpoint(md) {
+						margin: #{mixins.toRem(16px)} 0;
+					}
+				}
+
+				> :first-child {
+					margin-top: 0;
+				}
+
+				> :last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.wp-block-image {
+				margin: 0;
+
+				img {
+					width: 100%;
+				}
+			}
+
+			.wp-block-spacer {
+				margin: 0;
+
+				+ * {
+					margin-top: 0;
+				}
+			}
+		}
+
+		&:has(+ section.profidev-paywall) .post-content {
+			position: relative;
+		}
+		&:has(+ section.profidev-paywall) .post-content::after {
+			content: ' ';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 100px;
+			pointer-events: none;
+
+			background: linear-gradient(
+				to bottom,
+				rgba(255, 255, 255, 0) 0%,
+				rgba(255, 255, 255, 0.4) 30%,
+				rgba(255, 255, 255, 0.9) 80%,
+				rgba(255, 255, 255, 1) 100%
+			);
+		}
+	}
+}

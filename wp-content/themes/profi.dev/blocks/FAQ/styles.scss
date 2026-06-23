@@ -1,0 +1,115 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+	.profidev-faq {
+		margin: var(--theme-section-gap) 0;
+
+		.heading {
+			text-align: center;
+			margin: 0 0 #{mixins.toRem(50px)};
+
+			@include mixins.breakpoint(md) {
+				margin: 0 0 #{mixins.toRem(30px)};
+			}
+
+			p {
+				font-size: var(--theme-fs-xl);
+				color: var(--wp--preset--color--color-6);
+			}
+		}
+
+		.accordions {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			gap: 0 #{mixins.toRem(60px)};
+			width: 100%;
+
+
+			&-wrapper {
+				width: calc(50% - #{mixins.toRem(30px)});
+
+				@include mixins.breakpoint(lg) {
+					width: 100%;
+				}
+
+				&:last-child {
+					.accordion:last-child {
+						border-bottom: var(--theme-border) var(--theme-border-color);
+					}
+				}
+			}
+
+			.accordion {
+				border-top: var(--theme-border) var(--theme-border-color);
+
+				&-head {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					gap: #{mixins.toRem(15px)};
+					padding: #{mixins.toRem(30px)} 0;
+					font-size: var(--theme-fs-xl);
+					width: 100%;
+
+					.icon {
+						width: #{mixins.toRem(24px)};
+						height: #{mixins.toRem(24px)};
+						flex-shrink: 0;
+						position: relative;
+						transition: transform var(--theme-transition);
+
+						&::before {
+							content: '';
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							width: 100%;
+							height: #{mixins.toRem(1px)};
+							background-color: var(--wp--preset--color--color-1);
+						}
+
+						&::after {
+							content: '';
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							width: #{mixins.toRem(1px)};
+							height: 100%;
+							background-color: var(--wp--preset--color--color-1);
+							mask: unset;
+							transition: opacity var(--theme-transition), height var(--theme-transition);
+						}
+					}
+
+					&[aria-expanded="true"] {
+						.icon {
+							transform: rotate(180deg);
+
+							&::after {
+								opacity: 0;
+								height: 0;
+							}
+						}
+					}
+				}
+
+				&-content {
+					.theme-text-element {
+						padding: 0 0#{mixins.toRem(20px)};
+						border: none;
+					}
+				}
+
+				&:last-child {
+					@media (min-width: calc(map.get(mixins.$breakpoints, lg) + 1px)) {
+						border-bottom: var(--theme-border) var(--theme-border-color);
+					}
+				}
+			}
+		}
+	}
+}

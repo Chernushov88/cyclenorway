@@ -1,0 +1,12 @@
+@use "styles";
+
+html:not(.wp-toolbar) {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  background-color: gray;
+  height: 100%;
+}
+
+body.page, body.archive, body.blog, body.single, body.home, body.error404, body.search {
+	@extend %body;
+}

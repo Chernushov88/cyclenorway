@@ -1,0 +1,9 @@
+@use "styles";
+
+div.is-root-container {
+	@extend %block;
+
+	[data-type="profidev/text-image"] {
+		background-color: transparent!important;
+	}
+}

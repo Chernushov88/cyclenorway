@@ -1,0 +1,43 @@
+@use "styles";
+
+div.is-root-container,
+body.block-editor-iframe__body {
+	@extend %body;
+
+	display: block;
+
+	[data-type="core/post-content"] {
+		margin-top: 0;
+	}
+
+	[data-type="profidev/accordion"] {
+		.accordion{
+			.accordion-content {
+				overflow: hidden;
+				transition: height var(--theme-transition);
+			}
+
+			&.active {
+				.accordion-content {
+					height: auto;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 782px) {
+	.interface-complementary-area {
+		width: 470px !important;
+
+		&__fill {
+			width: auto !important;
+		}
+	}
+}
+
+.is-root-container {
+	overflow: hidden;
+}
+
+

@@ -1,0 +1,5 @@
+@use "styles";
+
+div.is-root-container {
+	@extend %block;
+}

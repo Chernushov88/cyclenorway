@@ -1,0 +1,50 @@
+{
+    "53": {
+        "title": "Animation Starter",
+        "description": "",
+        "data": [
+            {
+                "title": "Default Title",
+                "_title": "field_6964c55766d26",
+                "examplerepeater_0_exampleimage": 8,
+                "_examplerepeater_0_exampleimage": "field_6964c57166d28",
+                "examplerepeater_0_exampleurl": "https:\/\/google.com",
+                "_examplerepeater_0_exampleurl": "field_6964c57b66d29",
+                "examplerepeater": 1,
+                "_examplerepeater": "field_6964c56866d27",
+                "example_wysiwyg": "Example Wysiwyg data",
+                "_example_wysiwyg": "field_6964c59b15322"
+            }
+        ]
+    },
+    "59": {
+        "title": "Animation Starter New",
+        "description": "Example description",
+        "data": [
+            {
+                "title": "Default Title new",
+                "_title": "field_6964c55766d26",
+                "examplerepeater_0_exampleimage": 8,
+                "_examplerepeater_0_exampleimage": "field_6964c57166d28",
+                "examplerepeater_0_exampleurl": "https:\/\/google.com",
+                "_examplerepeater_0_exampleurl": "field_6964c57b66d29",
+                "examplerepeater": 1,
+                "_examplerepeater": "field_6964c56866d27",
+                "example_wysiwyg": "Example Wysiwyg data",
+                "_example_wysiwyg": "field_6964c59b15322"
+            },
+            {
+                "title": "Default Title New Second",
+                "_title": "field_6964c55766d26",
+                "examplerepeater_0_exampleimage": 8,
+                "_examplerepeater_0_exampleimage": "field_6964c57166d28",
+                "examplerepeater_0_exampleurl": "https:\/\/google.com",
+                "_examplerepeater_0_exampleurl": "field_6964c57b66d29",
+                "examplerepeater": 1,
+                "_examplerepeater": "field_6964c56866d27",
+                "example_wysiwyg": "Example Wysiwyg data",
+                "_example_wysiwyg": "field_6964c59b15322"
+            }
+        ]
+    }
+}

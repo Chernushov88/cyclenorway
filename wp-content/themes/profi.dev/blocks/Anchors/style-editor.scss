@@ -1,0 +1,9 @@
+@use "styles";
+
+div.is-root-container {
+	@extend %block;
+
+	[data-type="profidev/anchors"] {
+		margin: 0;
+	}
+}

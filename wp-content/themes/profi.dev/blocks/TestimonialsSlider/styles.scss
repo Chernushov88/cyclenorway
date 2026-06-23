@@ -1,0 +1,138 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+@use "swiper/css";
+@use "swiper/css/effect-fade";
+
+%block {
+	.profidev-testimonials-slider {
+		position: relative;
+		margin: var(--theme-route-section-gap) 0;
+		padding: #{mixins.toRem(40px)} 0;
+		background-color: var(--wp--preset--color--color-8);
+		z-index: var(--base-z-index);
+		overflow: hidden;
+
+		> .theme-image-wrapper {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			opacity: 0.15;
+			background-color: var(--wp--preset--color--black);
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.theme-container {
+			position: relative;
+		}
+
+		.testimonials-slider {
+			overflow: visible;
+			width: 85%;
+
+			@include mixins.breakpoint(md) {
+				width: 100%;
+			}
+		}
+
+		.testimonial {
+			width: 100%;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			gap: #{mixins.toRem(35px)};
+
+			@include mixins.breakpoint(md) {
+				gap: #{mixins.toRem(20px)};
+			}
+
+			.theme-image-wrapper {
+				width: #{mixins.toRem(102px)};
+				height: #{mixins.toRem(102px)};
+				border-radius: 50%;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+
+				.copyright {
+					display: none;
+				}
+			}
+
+			.author {
+				span {
+					display: block;
+				}
+
+				.name {
+					font-weight: 500;
+					opacity: 0.85;
+				}
+
+				.position {
+					font-family: var(--wp--preset--font-family--secondary);
+					font-style: italic;
+					color: var(--wp--preset--color--color-5);
+				}
+			}
+		}
+
+		.theme-slider-controls {
+			position: static;
+
+			@media (min-width: calc(map.get(mixins.$breakpoints, md) + 1px)) {
+				margin-top: 0;
+			}
+
+			.slider-pagination {
+				&:not(.swiper-pagination-bullets-dynamic) {
+					display: none;
+
+					@include mixins.breakpoint(md) {
+						display: flex;
+					}
+				}
+			}
+
+			.slider-button {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: #{mixins.toRem(70px)};
+				height: #{mixins.toRem(70px)};
+				background-color: var(--wp--preset--color--color-7);
+				border-radius: 50%;
+				z-index: calc(var(--base-z-index) + 1);
+
+				@include mixins.breakpoint(md) {
+					display: none;
+				}
+
+				&::before {
+					width: 50%;
+					height: 50%;
+				}
+
+				&.prev {
+					left: #{mixins.toRem(20px)};
+				}
+
+				&.next {
+					right: #{mixins.toRem(20px)};
+				}
+			}
+		}
+	}
+}

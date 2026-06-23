@@ -1,0 +1,29 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+	.profidev-related-posts {
+		margin: var(--theme-section-gap) 0;
+
+        .post-list {
+            --horizontal-gap: #{mixins.toRem(30px)};
+            --vertical-gap: #{mixins.toRem(35px)};
+
+            @include mixins.breakpoint(lg) {
+                --number-of-items: 2;
+            }
+
+            @include mixins.breakpoint(md) {
+                --number-of-items: 1;
+            }
+        }
+
+        &.template-2 {
+            .post-list {
+                @media (min-width: calc(map.get(mixins.$breakpoints, lg) + 1px)) {
+                    --number-of-items: 2;
+                }
+            }
+        }
+	}
+}

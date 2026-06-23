@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "typography": {
+      "fluid": false,
+      "defaultFontSizes": false,
+      "customFontSize": false,
+      "fontSizes": [
+        { "name": "H1", "slug": "h1", "size": "var(--theme-fs-h1)" },
+        { "name": "H2", "slug": "h2", "size": "var(--theme-fs-h2)" },
+        { "name": "H3", "slug": "h3", "size": "var(--theme-fs-h3)" },
+        { "name": "H4", "slug": "h4", "size": "var(--theme-fs-h4)" },
+        { "name": "H5", "slug": "h5", "size": "var(--theme-fs-h5)" },
+        { "name": "H6", "slug": "h6", "size": "var(--theme-fs-h6)" },
+
+        { "name": "Text XL", "slug": "text-xl", "size": "var(--theme-fs-xl)" },
+        { "name": "Text LG", "slug": "text-lg", "size": "var(--theme-fs-lg)" },
+        { "name": "Text MD", "slug": "text-md", "size": "var(--theme-fs-md)" },
+        { "name": "Text SM", "slug": "text-sm", "size": "var(--theme-fs-sm)" }
+      ]
+    }
+  },
+  "styles": {},
+  "customTemplates": [],
+  "templateParts": [],
+  "patterns": []
+}

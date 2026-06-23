@@ -1,0 +1,34 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+    .profidev-blog-posts {
+        margin: var(--theme-section-gap) 0;
+
+        .post-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: #{mixins.toRem(35px)} #{mixins.toRem(30px)};
+
+            @include mixins.breakpoint(md) {
+               gap: #{mixins.toRem(20px)};
+            }
+        }
+
+        .post-item {
+            width: calc(50% - #{mixins.toRem(15px)});
+
+            @include mixins.breakpoint(lg) {
+                width: 100%;
+            }
+        }
+
+        .more-posts {
+            margin: #{mixins.toRem(56px)} auto 0;
+
+            @include mixins.breakpoint(md) {
+               margin-top: #{mixins.toRem(32px)};
+            }
+        }
+    }
+}

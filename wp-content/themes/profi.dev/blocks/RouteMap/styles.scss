@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+	.profidev-route-map {
+		margin: var(--theme-section-gap) 0;
+
+		.title {
+			margin-top: 0;
+		}
+
+		&.template-2 {
+
+			.title,
+			.text {
+				text-align: center;
+				max-width: #{mixins.toRem(684px)};
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}

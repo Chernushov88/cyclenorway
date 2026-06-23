@@ -1,0 +1,54 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+	.profidev-quote {
+		container-type: inline-size;
+		container-name: quote;
+
+		.quote-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: #{mixins.toRem(26px)};
+
+            @include mixins.container-breakpoint('quote', 500px) {
+                flex-direction: column;
+            }
+        }
+
+        .quote-text {
+            flex-grow: 1;
+            font-size: var(--theme-fs-h6);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .theme-image-wrapper {
+            max-width: 47%;
+            max-height: #{mixins.toRem(204px)};
+            flex-shrink: 0;
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+				border-radius: var(--theme-br-xl);
+            }
+
+			.copyright {
+				display: none;
+			}
+        }
+
+        &.reverse-block {
+            .quote-wrapper {
+                flex-direction: row-reverse;
+
+                @include mixins.container-breakpoint('quote', 500px) {
+                    flex-direction: column;
+                }
+            }
+        }
+	}
+}

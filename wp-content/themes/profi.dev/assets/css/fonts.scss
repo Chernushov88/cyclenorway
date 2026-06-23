@@ -1,0 +1,12 @@
+@use "./mixins" as mixins;
+
+@include mixins.initFonts("Inter", (
+  "Variable": (weight: (100 900), file: "Inter-Variable")
+));
+
+@include mixins.initFonts("ABC Marist", (
+  "Regular":  (weight: 400, file: "ABCMarist-Regular"),
+  "Medium":   (weight: 500, file: "ABCMarist-Medium"),
+  "SemiBold": (weight: 600, file: "ABCMarist-SemiBold"),
+  "Bold":     (weight: 700, file: "ABCMarist-Bold"),
+));

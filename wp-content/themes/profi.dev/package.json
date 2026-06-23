@@ -1,0 +1,28 @@
+{
+  "name": "profi-dev-theme-starter",
+  "version": "3.0.0",
+  "description": "Profi.dev wordpress theme starter kit.",
+  "license": "ISC",
+  "author": "Profi.Dev <tech@profi.dev>",
+  "type": "module",
+  "scripts": {},
+  "engines": {
+    "node": ">= 20.1",
+    "npm": ">= 10.2",
+    "yarn": ">= 1.22"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^6.0.0",
+    "autoprefixer": "^10.4.21",
+    "glob": "^13.0.6",
+    "sass": "^1.93.3",
+    "vite": "^7.1.12"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "justified-layout": "^4.1.0",
+    "normalize.css": "^8.0.1",
+    "photoswipe": "^5.4.4",
+    "swiper": "^12.1.2"
+  }
+}

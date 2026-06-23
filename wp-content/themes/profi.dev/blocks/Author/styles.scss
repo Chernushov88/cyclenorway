@@ -1,0 +1,36 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+    .profidev-author {
+        display: flex;
+        align-items: center;
+        gap: #{mixins.toRem(16px)};
+
+        .author-thumb {
+            width: #{mixins.toRem(69px)};
+            height: #{mixins.toRem(69px)};
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .copyright {
+            display: none;
+        }
+
+        .author-info {
+            > * {
+                margin: 0;
+            }
+
+            .author-name {
+                margin-bottom: #{mixins.toRem(4px)};
+            }
+
+            .author-role {
+                font-size: var(--theme-fs-md);
+            }
+        }
+    }
+}

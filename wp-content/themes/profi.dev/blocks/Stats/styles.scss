@@ -1,0 +1,117 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+    .profidev-stats {
+        margin: var(--theme-section-gap) 0;
+        position: relative;
+        background-color: var(--wp--preset--color--color-3);
+        padding: #{mixins.toRem(100px)} 0;
+        color: var(--wp--preset--color--white);
+        text-align: center;
+        z-index: var(--base-z-index);
+
+        @include mixins.breakpoint(md) {
+            padding: #{mixins.toRem(68px)} 0;
+        }
+
+        .theme-image-wrapper {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .copyright {
+                display: none;
+            }
+        }
+
+        .stats-heading {
+            margin: 0 0 #{mixins.toRem(100px)};
+
+            @include mixins.breakpoint(md) {
+                margin-bottom: #{mixins.toRem(68px)};
+
+                br {
+                    display: none;
+                }
+            }
+        }
+
+        .stats-list {
+            --horizontal-gap: 10%;
+            --vertical-gap: 10%;
+            justify-content: center;
+
+            @include mixins.breakpoint(xl) {
+                --horizontal-gap: #{mixins.toRem(40px)};
+                --vertical-gap: #{mixins.toRem(60px)};
+            }
+
+            @include mixins.breakpoint(lg) {
+                --number-of-items: 2;
+            }
+
+            @include mixins.breakpoint(md) {
+                --horizontal-gap: #{mixins.toRem(25px)};
+            }
+
+            @include mixins.breakpoint(sm) {
+                --number-of-items: 1;
+            }
+        }
+
+        .stats-item {
+            display: flex;
+            flex-direction: column;
+            gap: #{mixins.toRem(50px)};
+
+            @include mixins.breakpoint(md) {
+                gap: #{mixins.toRem(30px)};
+            }
+        }
+
+        .stats-title {
+            position: relative;
+            padding-top: #{mixins.toRem(25px)};
+            font-size: var(--theme-fs-h5);
+            
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: #{mixins.toRem(163px)};
+                height: #{mixins.toRem(5px)};
+                max-width: 100%;
+                background-color: var(--wp--preset--color--color-4);
+            }
+
+            > * {
+                display: block;
+            }
+
+            .stats-number {
+                font-size: #{mixins.toRem(80px)};
+
+                @include mixins.breakpoint(xl) {
+                    font-size: var(--theme-fs-h1);
+                }
+            }
+        }
+
+        .stats-description {
+            font-family: var(--wp--preset--font-family--secondary);
+            font-size: var(--theme-fs-h6);
+            opacity: .8;
+        }
+    }
+}

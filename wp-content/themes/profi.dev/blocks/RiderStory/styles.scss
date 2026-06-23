@@ -1,0 +1,89 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+	.profidev-rider-story {
+		margin: var(--theme-section-gap) 0;
+
+		.wrapper {
+			display: flex;
+			flex-wrap: wrap;
+
+			@include mixins.breakpoint(md) {
+				gap: #{mixins.toRem(32px)};
+			}
+		}
+
+		.raider-bio {
+			width: 40%;
+			padding-right: 8%;
+
+			@include mixins.breakpoint(lg) {
+				padding-right: 4%;
+			}
+
+			@include mixins.breakpoint(md) {
+				width: 100%;
+				padding-right: 0;
+			}
+
+			&-heading {
+				display: flex;
+				flex-direction: column;
+				gap: #{mixins.toRem(16px)};
+				padding-bottom: #{mixins.toRem(16px)};
+				border-bottom: var(--theme-border) var(--wp--preset--color--color-1);
+			}
+
+			&-socials {
+				display: flex;
+				flex-wrap: wrap;
+				gap: #{mixins.toRem(8px)};
+			}
+
+			&-social {
+				display: flex;
+				width: #{mixins.toRem(24px)};
+				height: #{mixins.toRem(24px)};
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+				}
+			}
+
+			.theme-image-wrapper {
+				display: block;
+				aspect-ratio: 460 / 450;
+				border-radius: var(--theme-br-xl);
+				overflow: hidden;
+				margin-top: #{mixins.toRem(40px)};
+
+				@include mixins.breakpoint(md) {
+					margin-top: #{mixins.toRem(26px)};
+					aspect-ratio: 460 / 300;
+				}
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+
+				.copyright {
+					display: none;
+				}
+			}
+		}
+
+		.raider-story {
+			width: 60%;
+			color: var(--wp--preset--color--color-6);
+
+			@include mixins.breakpoint(md) {
+				width: 100%;
+			}
+		}
+	}
+}

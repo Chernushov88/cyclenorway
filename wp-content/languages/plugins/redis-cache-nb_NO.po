@@ -1,0 +1,588 @@
+# Translation of Plugins - Redis Object Cache - Stable (latest release) in Norwegian (Bokmål)
+# This file is distributed under the same license as the Plugins - Redis Object Cache - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2026-02-06 11:07:02+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: nb_NO\n"
+"Project-Id-Version: Plugins - Redis Object Cache - Stable (latest release)\n"
+
+#: includes/class-plugin.php:1084
+msgid "Invalid Nonce."
+msgstr "Ugyldig nonce."
+
+#: includes/class-plugin.php:1447
+msgid "Object cache drop-in is not writable."
+msgstr "Innstikk for objektmellomlager er ikke skrivbar."
+
+#: includes/class-plugin.php:1432
+msgid "File modifications are not allowed."
+msgstr "Filendringer er ikke tillatt."
+
+#. translators: %s = Object Cache Pro.
+#: includes/ui/settings.php:83
+msgid "Check out %s"
+msgstr "Sjekk ut %s"
+
+#: includes/ui/settings.php:79
+msgid "Need more performance and reliability?"
+msgstr "Trenger du mer ytelse og pålitelighet?"
+
+#. translators: %1$s = Formatted object-cache.php file name, %2$s = Formatted
+#. wp-content directory name.
+#: includes/object-cache.php:2996
+msgid "To disable Redis, delete the %1$s file in the %2$s directory."
+msgstr "For å deaktivere Redis, slett filen %1$s i mappen %2$s."
+
+#: includes/object-cache.php:2984
+msgid "Is the Redis server running?"
+msgstr "Kjører Redis-serveren?"
+
+#: includes/object-cache.php:2983
+msgid "Is the correct Redis host and port set?"
+msgstr "Er riktig Redis-nettvert og port angitt?"
+
+#. translators: %s = Formatted wp-config.php file name.
+#: includes/object-cache.php:2978
+msgid "WordPress is unable to establish a connection to Redis. This means that the connection information in your %s file are incorrect, or that the Redis server is not reachable."
+msgstr "WordPress klarer ikke å opprette forbindelse til Redis. Dette betyr at tilkoblingsinformasjonen i %s-filen er feil, eller at Redis-serveren ikke er tilgjengelig."
+
+#: includes/ui/tabs/overview.php:87
+msgid "Unreachable"
+msgstr "Utilgjengelig"
+
+#: includes/ui/tabs/overview.php:82
+msgid "Reachable"
+msgstr "Tilgjengelig"
+
+#: includes/ui/tabs/overview.php:77
+msgid "Redis:"
+msgstr "Redis:"
+
+#: includes/ui/tabs/overview.php:27
+msgid "Redis is unreachable:"
+msgstr "Redis er utilgjengelig:"
+
+#. translators: %s = Link to installation instructions.
+#: includes/object-cache.php:2989
+msgid "If you need help, please read the <a href=\"%s\">installation instructions</a>."
+msgstr "Hvis du trenger hjelp kan du lese <a href=\"%s\">installasjonsinstruksjonene</a>."
+
+#: includes/object-cache.php:2971
+msgid "Error establishing a Redis connection"
+msgstr "Feil ved opprettelse av Redis-tilkobling"
+
+#. translators: %s = The Redis connection error message.
+#: includes/cli/class-commands.php:186
+msgid "Object cache drop-in could not be updated. Redis server is unreachable: %s"
+msgstr "Innstikket for objektmellomlagring kunne ikke oppdateres. Redis-serveren er utilgjengelig: %s"
+
+#. translators: %s = The Redis connection error message.
+#: includes/cli/class-commands.php:68
+msgid "Object cache could not be enabled. Redis server is unreachable: %s"
+msgstr "Objektmellomlagring kunne ikke slås på. Redis-serveren er utilgjengelig: %s"
+
+#. translators: 1: Hit ratio, 2: Hits, 3: Misses. 4: Human-readable size of
+#. cache.
+#: includes/class-plugin.php:808
+msgid "(Current page) Hit Ratio: %1$s%%, Hits %2$s, Misses: %3$s, Size: %4$s"
+msgstr "(Gjeldende side) Treffprosent: %1$s%%, Treff %2$s, Feil: %3$s, Størrelse: %4$s"
+
+#. translators: %s = The status of the Redis connection.
+#: includes/class-plugin.php:788
+msgid "Status: %s"
+msgstr "Status: %s"
+
+#: includes/class-plugin.php:856
+msgid "Flushing cache..."
+msgstr "Tømmer mellomlageret ..."
+
+#: includes/class-plugin.php:550
+msgid "Drop-in is outdated"
+msgstr "Innstikket er utdatert"
+
+#: includes/class-plugin.php:546
+msgid "Not enabled"
+msgstr "Ikke slått på"
+
+#. translators: %s = Action link to update the drop-in.
+#: includes/class-plugin.php:1110
+msgid "The Object Cache Pro plugin appears to be installed and should be used. You can safely <a href=\"%s\">uninstall Redis Object Cache</a>."
+msgstr "Utvidelsen Object Cache Pro ser ut til å være installert og burde brukes. Du kan trygt <a href=\"%s\">avinstallere Redis Object Cache</a>."
+
+#: includes/ui/tabs/overview.php:70
+msgid "Writeable"
+msgstr "Skrivbar"
+
+#: includes/ui/tabs/overview.php:64
+msgid "Not writeable"
+msgstr "Ikke skrivbar"
+
+#: includes/ui/tabs/overview.php:53
+msgid "Filesystem:"
+msgstr "Filsystem:"
+
+#: includes/ui/tabs/metrics.php:31 includes/ui/widget.php:32
+msgid "The total amount of commands sent to Redis."
+msgstr "Det totale antallet kommandoer sendt til Redis."
+
+#: includes/ui/tabs/metrics.php:26 includes/ui/widget.php:27
+msgid "The hit/miss ratio of cache data that was already cached."
+msgstr "Treff-/feilforholdet for mellomlagerdata som allerede var mellomlagret."
+
+#: includes/ui/tabs/metrics.php:21 includes/ui/widget.php:22
+msgid "The total amount of bytes that was retrieved from Redis."
+msgstr "Den totale mengden byte som ble hentet fra Redis."
+
+#: includes/ui/tabs/metrics.php:16 includes/ui/widget.php:17
+msgid "The total amount of time (in milliseconds) it took Redis to return cache data."
+msgstr "Den totale tiden (i millisekunder) det tok for Redis å returnere mellomlagerdata."
+
+#: includes/ui/tabs/diagnostics.php:19
+msgid "Copied!"
+msgstr "Kopiert!"
+
+#: includes/ui/tabs/diagnostics.php:17
+msgid "Copy diagnostics to clipboard"
+msgstr "Kopier diagnostikken til utklippstavlen"
+
+#: includes/class-plugin.php:1467
+msgid "Content directory is not writable."
+msgstr "Innholdsmappen er ikke skrivbar."
+
+#: includes/class-plugin.php:1142
+msgid "Object Cache Pro!"
+msgstr "Object Cache Pro!"
+
+#: includes/class-plugin.php:291
+msgctxt "verb"
+msgid "Upgrade to Pro"
+msgstr "Oppgrader til Pro"
+
+#: includes/ui/settings.php:94
+msgid "Cache prefetching and analytics"
+msgstr "Forhåndshenting og analyse for mellomlager"
+
+#: includes/ui/settings.php:98
+msgid "Optimized for WooCommerce, Jetpack & Yoast SEO"
+msgstr "Optimalisert for Woocommerce, Jetpack og Yoast SEO"
+
+#: includes/ui/settings.php:97
+msgid "Health checks via WordPress & WP CLI"
+msgstr "Helsesjekk via WordPress og WP CLI"
+
+#: includes/ui/settings.php:96
+msgid "Secure connections with TLS"
+msgstr "Sikker tilkobling med TLS"
+
+#: includes/ui/settings.php:95
+msgid "Fully unit tested (100% code coverage)"
+msgstr "Fullstendig enhetstestet (100% kodedekning)"
+
+#: includes/ui/settings.php:93
+msgid "Easy debugging & logging"
+msgstr "Enkel feilsøking og logging"
+
+#: includes/ui/settings.php:92
+msgid "Faster serialization and compression"
+msgstr "Raskere serialisering og komprimering"
+
+#: includes/ui/settings.php:91
+msgid "100% WordPress API compliant"
+msgstr "100% kompatibel med WordPress API"
+
+#: includes/ui/settings.php:90
+msgid "Rewritten for raw performance"
+msgstr "Omskrevet for rå ytelse"
+
+#. translators: %s = Tab label.
+#: includes/ui/class-tab.php:154
+msgid "%s are disabled for this site."
+msgstr "%s er slått av for denne siden."
+
+#: includes/class-plugin.php:554
+msgid "Drop-in is invalid"
+msgstr "Innstikket er ikke gyldig"
+
+#. Author URI of the plugin
+#: redis-cache.php
+msgid "https://objectcache.pro"
+msgstr "https://objectcache.pro"
+
+#: includes/class-plugin.php:1485
+msgid "Copied test file couldn’t be deleted."
+msgstr "Kopiert test fil kunne ikke fjernes."
+
+#: includes/class-plugin.php:1481
+msgid "Couldn’t verify test file contents."
+msgstr "Kunne ikke verifisere innholdet av testfil."
+
+#: includes/class-plugin.php:1475
+msgid "Copied test file doesn’t exist."
+msgstr "Kopiert testfil eksisterer ikke."
+
+#: includes/class-plugin.php:1471
+msgid "Failed to copy test file."
+msgstr "Mislyktes å kopiere testfil."
+
+#: includes/class-plugin.php:1462
+msgid "Test file exists, but couldn’t be deleted."
+msgstr "Testfil eksisterer, men kunne ikke fjernes."
+
+#: includes/class-plugin.php:1457
+msgid "Object cache file doesn’t exist."
+msgstr "Objektmellomlager-filen eksisterer ikke."
+
+#: includes/class-plugin.php:1436
+msgid "Could not initialize filesystem."
+msgstr "Kunne ikke initialisere filsystemet."
+
+#: includes/ui/tabs/overview.php:191
+msgid "Username:"
+msgstr "Brukernavn:"
+
+#. translators: %s = Link to settings page.
+#: includes/class-plugin.php:716
+msgid "A foreign object cache drop-in was found. To use Redis for object caching, please <a href=\"%s\">enable the drop-in</a>."
+msgstr "Et fremmed innstikk for mellomlagring av objekter ble funnet. For å bruke Redis til objektmellomlagring, <a href=\"%s\">slå på innstikket</a>."
+
+#: includes/class-plugin.php:396
+msgid "Enable object cache to collect data."
+msgstr "Slå på objektmellomlager for å samle inn data."
+
+#: includes/class-plugin.php:395
+msgid "Not enough data collected, yet."
+msgstr "Ikke nok data samlet inn enda."
+
+#: includes/class-plugin.php:251 includes/class-plugin.php:772
+#: includes/ui/widget.php:38
+msgid "Settings"
+msgstr "Innstillinger"
+
+#: includes/class-plugin.php:194
+msgid "Metrics"
+msgstr "Målinger"
+
+#: includes/class-qm-output.php:113
+msgid "WordPress is using a foreign object cache drop-in and Redis Object Cache is not being used. Use WP CLI or go to \"Settings -> Redis\" to enable drop-in."
+msgstr "WordPress bruker ett fremmed innstikk for objektmellomlagring, og Redis Object Cache brukes ikke. Bruk WP CLI eller gå til «Innstillinger -> Redis» for å aktivere innstikket."
+
+#: includes/class-qm-output.php:102
+msgid "The Redis Object Cache drop-in is not installed. Use WP CLI or go to \"Settings -> Redis\" to enable drop-in."
+msgstr "Innstikket for Redis Object Cache er ikke installert. Bruk WP CLI eller gå til «Innstillinger -> Redis» for å aktivere innstikket."
+
+#: includes/class-plugin.php:743 includes/class-qm-collector.php:34
+#: includes/class-qm-output.php:37
+msgid "Object Cache"
+msgstr "Objektmellomlager"
+
+#: includes/cli/class-commands.php:61 includes/cli/class-commands.php:121
+msgid "A foreign object cache drop-in was found. To use Redis for object caching, run: `wp redis update-dropin`."
+msgstr "Det ble funnet et fremmed innstikk for objektmellomlagring. For å bruke Redis til objektmellomlagring, kjør: «wp redis update-dropin»."
+
+#: includes/ui/tabs/overview.php:265
+msgid "Redis Version:"
+msgstr "Redis-versjon:"
+
+#. translators: %s = Redis retry interval in milliseconds.
+#: includes/ui/tabs/overview.php:254
+msgid "%sms"
+msgstr "%sms"
+
+#: includes/ui/tabs/overview.php:248
+msgid "Retry Interval:"
+msgstr "Gjentakelsesintervall:"
+
+#: includes/ui/tabs/overview.php:231
+msgid "Read Timeout:"
+msgstr "Tidsavbrudd for lesing:"
+
+#. translators: %s = Redis connection/read timeout in seconds.
+#: includes/ui/tabs/overview.php:220 includes/ui/tabs/overview.php:237
+msgid "%ss"
+msgstr "%ss"
+
+#: includes/ui/tabs/overview.php:214
+msgid "Connection Timeout:"
+msgstr "Tidsavbrudd for tilkobling:"
+
+#: includes/ui/tabs/overview.php:158
+msgid "Shards:"
+msgstr "Shards:"
+
+#: includes/ui/tabs/overview.php:145
+msgid "Cluster:"
+msgstr "Gruppe:"
+
+#: includes/ui/tabs/overview.php:122
+msgid "Connection"
+msgstr "Tilkobling"
+
+#: includes/ui/query-monitor.php:115
+msgid "Metadata"
+msgstr "Metadata"
+
+#: includes/ui/query-monitor.php:101
+msgid "Unflushable Groups"
+msgstr "Grupper som ikke kan tømmes"
+
+#: includes/ui/query-monitor.php:87
+msgid "Non-persistent Groups"
+msgstr "Ikke-vedvarende grupper"
+
+#: includes/ui/query-monitor.php:50
+msgid "Errors"
+msgstr "Feilmeldinger"
+
+#: includes/ui/query-monitor.php:40
+msgid "Size"
+msgstr "Størrelse"
+
+#: includes/ui/query-monitor.php:35
+msgid "Misses"
+msgstr "Feil"
+
+#: includes/ui/query-monitor.php:30
+msgid "Hits"
+msgstr "Treff"
+
+#: includes/ui/query-monitor.php:25
+msgid "Hit Ratio"
+msgstr "Treffprosent"
+
+#: includes/class-plugin.php:394 includes/ui/tabs/metrics.php:32
+#: includes/ui/widget.php:33
+msgid "Calls"
+msgstr "Kall"
+
+#: includes/class-plugin.php:393 includes/ui/tabs/metrics.php:27
+#: includes/ui/widget.php:28
+msgid "Ratio"
+msgstr "Forhold"
+
+#: includes/class-plugin.php:392 includes/ui/tabs/metrics.php:22
+#: includes/ui/widget.php:23
+msgid "Bytes"
+msgstr "Byte"
+
+#: includes/class-plugin.php:391 includes/ui/tabs/metrics.php:17
+#: includes/ui/widget.php:18
+msgid "Time"
+msgstr "Tid"
+
+#: includes/ui/settings.php:116
+msgid "Your site meets the system requirements for the Pro version."
+msgstr "Siden din oppfyller kravene for Pro versjonen."
+
+#: includes/ui/settings.php:71
+msgid "Resources"
+msgstr "Ressurser"
+
+#. translators: %1$d = number of objects. %2$s = human-readable size of cache.
+#. %3$s = name of the used client.
+#: includes/class-plugin.php:1317
+msgid "Retrieved %1$d objects (%2$s) from Redis using %3$s."
+msgstr "Hentet %1$d objekter (%2$s) fra Redis med %3$s."
+
+#. translators: %s = Version of the PhpRedis extension.
+#: includes/ui/settings.php:148
+msgid "The current version of the PhpRedis extension (%s) is too old. PhpRedis 3.1.1 or newer is required."
+msgstr "Den nåværende versjonen av PhpRedis utvidelsen (%s) er for gammel. PhpRedis 3.1.1 eller nyere er påkrevd."
+
+#: includes/ui/settings.php:141
+msgid "The PhpRedis extension is not installed."
+msgstr "PhpRedis utvidelsen er ikke installert."
+
+#. translators: %s = PHP Version.
+#: includes/ui/settings.php:132
+msgid "The current version of PHP (%s) is too old. PHP 7.2 or newer is required."
+msgstr "Den nåværende versjonen av PHP (%s) er for gammel. PHP 7.2 eller nyere er påkrevd."
+
+#: includes/ui/settings.php:123
+msgid "Your site <i>does not</i> meet the requirements for the Pro version:"
+msgstr "Siden <i> oppfyller ikke </i> kravene for Pro-versjonen."
+
+#: includes/ui/tabs/overview.php:110
+msgid "This doesn’t appear to be a valid number."
+msgstr "Dette ser ikke ut til å være et gyldig tall."
+
+#. translators: %s = Link to the plugin's settings screen.
+#: includes/class-plugin.php:1193
+msgid "Object Cache Pro is a <u>business class</u> object cache that’s highly-optimized for WooCommerce to provide true reliability, peace of mind and faster load times for your store. <a style=\"color: #bb77ae;\" href=\"%s\">Learn more »</a>"
+msgstr "Object Cache Pro er et mellomlager i <u>forretningsklasse</u> som er godt optimalisert for WooCommerce for å gi full pålitelighet, sinnsro og raskere lasting av butikken. <a style=\"color: #bb77ae;\" href=\"%s\">Lær mer »</a>"
+
+#: includes/class-plugin.php:1190
+msgid "Object Cache Pro + WooCommerce = ❤️"
+msgstr "Redis Cache Pro + WooCommerce = ❤️"
+
+#. translators: %s = Link to the plugin setting screen.
+#: includes/class-plugin.php:1145
+msgid "A <u>business class</u> object cache backend. Truly reliable, highly-optimized and fully customizable, with a <u>dedicated engineer</u> when you most need it. <a href=\"%s\">Learn more »</a>"
+msgstr "Et objektmellomlager i <u>foretningsklasse</u>. Virkelig pålitelig, godt optimalisert og fullstendig tilpassningsvennlig, med en <u>dedikert teknikker</u> når du trenger det som mest. <a href=\"%s\">Lær mer »</a>"
+
+#: includes/ui/settings.php:102
+msgid "Learn more"
+msgstr "Les mer"
+
+#: includes/ui/settings.php:87
+msgid "<strong>A business class object cache backend.</strong> Truly reliable, highly-optimized and fully customizable, with a <u>dedicated engineer</u> when you most need it."
+msgstr "<strong>Et objektmellomlager i forretningsklasse.</strong> Virkelig pålitelig, godt optimalisert og fullstendig tilpassvennlig, med en <u>dedikert teknikker</u> når du trenger det som mest."
+
+#: includes/ui/query-monitor.php:73
+msgid "Global Groups"
+msgstr "Globale grupper"
+
+#: includes/ui/query-monitor.php:20
+msgid "Status"
+msgstr "Status"
+
+#: includes/class-plugin.php:200
+msgid "Diagnostics"
+msgstr "Diagnostikk"
+
+#: includes/class-plugin.php:1037 includes/cli/class-commands.php:191
+msgid "Object cache drop-in could not be updated."
+msgstr "Innstikket for objektmellomlager kunne ikke oppdateres."
+
+#: includes/class-plugin.php:1031 includes/cli/class-commands.php:189
+msgid "Updated object cache drop-in and enabled Redis object cache."
+msgstr "Innstikket for objektmellomlager er oppdatert og aktivert i Redis Objekt Cache."
+
+#: includes/cli/class-commands.php:115
+msgid "No object cache drop-in found."
+msgstr "Ingen innstikk for objektmellomlager ble funnet."
+
+#: includes/cli/class-commands.php:59
+msgid "Redis object cache already enabled."
+msgstr "Redis-mellomlagring er allerede slått på."
+
+#. Description of the plugin
+#: redis-cache.php
+msgid "A persistent object cache backend powered by Redis. Supports Predis, PhpRedis, Relay, replication, sentinels, clustering and WP-CLI."
+msgstr "Et vedvarende objektmellomlager drevet av Redis. Støtter Predis, PhpRedis, Relay, replikering, sentinels, klynging og WP-CLI."
+
+#: includes/class-qm-collector.php:77
+msgid "Yes"
+msgstr "Ja"
+
+#: includes/ui/tabs/overview.php:171
+msgid "Servers:"
+msgstr "Servere:"
+
+#: includes/class-plugin.php:188
+msgid "Overview"
+msgstr "Oversikt"
+
+#: includes/class-plugin.php:542 includes/class-qm-collector.php:77
+#: includes/ui/tabs/overview.php:59
+msgid "Disabled"
+msgstr "Deaktivert"
+
+#: includes/ui/tabs/overview.php:36
+msgid "Status:"
+msgstr "Status:"
+
+#. Author of the plugin
+#: redis-cache.php
+msgid "Till Krüss"
+msgstr "Till Krüss"
+
+#. Plugin URI of the plugin
+#: redis-cache.php
+msgid "https://wordpress.org/plugins/redis-cache/"
+msgstr "https://nb.wordpress.org/plugins/redis-cache/"
+
+#: includes/class-plugin.php:938 includes/class-plugin.php:1088
+msgid "Object cache could not be flushed."
+msgstr "Objektmellomlageret kunne ikke tømmes."
+
+#: includes/class-plugin.php:932 includes/class-plugin.php:1086
+msgid "Object cache flushed."
+msgstr "Objektmellomlageret ble tømt."
+
+#: includes/class-plugin.php:1006 includes/cli/class-commands.php:142
+msgid "Object cache could not be disabled."
+msgstr "Objektmellomlagringen kunne ikke slås av."
+
+#: includes/class-plugin.php:1000 includes/cli/class-commands.php:140
+msgid "Object cache disabled."
+msgstr "Objektmellomlagringen ble slått av."
+
+#: includes/class-plugin.php:976 includes/cli/class-commands.php:91
+msgid "Object cache could not be enabled."
+msgstr "Objektmellomlageringen kunne ikke slås på."
+
+#: includes/class-plugin.php:970 includes/cli/class-commands.php:89
+msgid "Object cache enabled."
+msgstr "Objektmellomlagringen ble slått på."
+
+#. translators: %s = Action link to update the drop-in.
+#: includes/class-plugin.php:709
+msgid "The Redis object cache drop-in is outdated. Please <a href=\"%s\">update the drop-in</a>."
+msgstr "Innstikket for Redis Objekt Cache er utdatert. <a href=\"%s\">Oppdater den nå</a>."
+
+#: includes/class-plugin.php:563 includes/ui/tabs/overview.php:266
+msgid "Unknown"
+msgstr "Ukjente"
+
+#: includes/class-plugin.php:560
+msgid "Not connected"
+msgstr "Ikke tilkoblet"
+
+#: includes/class-plugin.php:559
+msgid "Connected"
+msgstr "Tilkoblet"
+
+#: includes/class-plugin.php:152
+msgid "Redis"
+msgstr "Redis"
+
+#: includes/ui/tabs/overview.php:285
+msgid "Disable Object Cache"
+msgstr "Slå av objektmellomlagring"
+
+#: includes/ui/tabs/overview.php:291 includes/ui/tabs/overview.php:295
+msgid "Enable Object Cache"
+msgstr "Slå på objektmellomlagring"
+
+#: includes/class-plugin.php:764 includes/ui/tabs/overview.php:278
+msgid "Flush Cache"
+msgstr "Tøm mellomlager"
+
+#: includes/ui/tabs/overview.php:104
+msgid "Max. TTL:"
+msgstr "Maks TTL:"
+
+#: includes/ui/tabs/overview.php:95
+msgid "Key Prefix:"
+msgstr "Nøkkelprefiks:"
+
+#: includes/ui/tabs/overview.php:198
+msgid "Password:"
+msgstr "Passord:"
+
+#: includes/ui/tabs/overview.php:207
+msgid "Database:"
+msgstr "Database:"
+
+#: includes/ui/tabs/overview.php:184
+msgid "Port:"
+msgstr "Port:"
+
+#: includes/ui/tabs/overview.php:138
+msgid "Host:"
+msgstr "Vert:"
+
+#: includes/ui/tabs/overview.php:129
+msgid "Client:"
+msgstr "Klient:"
+
+#. Plugin Name of the plugin
+#: redis-cache.php includes/class-plugin.php:151 includes/class-plugin.php:223
+#: includes/ui/settings.php:19
+msgid "Redis Object Cache"
+msgstr "Redis Object Cache"
