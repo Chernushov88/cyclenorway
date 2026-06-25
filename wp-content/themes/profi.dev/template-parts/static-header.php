@@ -58,11 +58,12 @@ if (is_user_logged_in()) {
 					<?php if (!empty($account_page_url)): ?>
 						<a href="<?php echo esc_url($account_page_url); ?>" class="no-underline header-btn-account" title="<?php echo esc_attr('Account', 'profidev-theme'); ?>"></a>
 					<?php endif; ?>
-					<?php if (!empty($dashboard_page)): ?>
-						<a href="<?php echo esc_url($dashboard_page); ?>" class="no-underline header-btn-membership">
-							<?php echo is_user_logged_in() ? esc_html__('Members', 'profidev-theme') : esc_html__('Membership', 'profidev-theme'); ?>
-						</a>
-					<?php endif; ?>
+
+					<div class="header-controls-btns">
+						<a class="theme-button-primary-outline">Login</a>
+						<a class="btn theme-button">Join</a>
+					</div>
+
 					<button class="no-btn header-mobile-menu" aria-label="<?php echo esc_attr('Mobile menu', 'profidev-theme')?>"><span aria-hidden="true" class="line"></span></button>
 				</div>
 			</div>

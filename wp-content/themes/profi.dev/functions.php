@@ -51,6 +51,7 @@ if (!function_exists('make_application')) {
 					->addColor('color-6', 'Sixth Color')
 					->addColor('color-7', 'Seventh Color')
 					->addColor('color-8', 'Eighth Color')
+					->addColor('color-9', 'Ninth Color')
 					->addColor('white', 'White Color')
 					->addColor('black', 'Black Color');
 				$customizations
