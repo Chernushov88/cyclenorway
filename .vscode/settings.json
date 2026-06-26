@@ -1,24 +1,42 @@
 {
 	"cSpell.enabled": true,
 	"cSpell.allowCompoundWords": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.fixAll.stylelint": "explicit"
-  },
+
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.stylelint": "explicit"
+	},
+
+	// "[php]": {
+	// 	"editor.tabSize": 4,
+	// 	"editor.insertSpaces": true,
+	// 	"editor.formatOnSave": true,
+	// 	"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+	// },
+
+	// "[scss]": {
+	// 	"editor.tabSize": 4,
+	// 	"editor.insertSpaces": true,
+	// 	"editor.formatOnSave": true,
+	// 	"editor.defaultFormatter": "esbenp.prettier-vscode"
+	// },
+
 	"files.exclude": {
 		"**/.git": true,
 		"_docker": true,
 		".vscode/": true,
 		"database/": true,
-		"scripts/": true,
+		"scripts/": true
 	},
+
 	"files.watcherExclude": {
-			"**/.git/objects/**": true,
-			"**/.git/subtree-cache/**": true,
-			"**/node_modules/*/**": true,
-			"**/vendor/*/**": true,
-			"**/vendor-temp/*/**": true,
-			"wp-content/plugins/": true,
-			"wp-content/uploads": true,
-	}
+		"**/.git/objects/**": true,
+		"**/.git/subtree-cache/**": true,
+		"**/node_modules/*/**": true,
+		"**/vendor/*/**": true,
+		"**/vendor-temp/*/**": true,
+		"wp-content/plugins/": true,
+		"wp-content/uploads": true
+	},
+	"editor.tabSize": 2
 }
