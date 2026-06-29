@@ -1,0 +1,184 @@
+@use "sass:map";
+@use "~css/_mixins.scss" as mixins;
+
+%block {
+    .profidev-hero-routes {
+        display: flex;
+        position: relative;
+        z-index: var(--base-z-index);
+        color: var(--wp--preset--color--white);
+        min-height: #{mixins.toRem(750px)};
+        padding: calc(var(--theme-fallback-header-height) * 2) 0 var(--theme-fallback-header-height);
+
+				.hero-routes-bg {
+					position: absolute;
+					left: 0;
+					top: 0;
+					z-index: -1;
+				}
+
+        @include mixins.breakpoint(lg) {
+            min-height: 85vh;
+        }
+
+        @include mixins.breakpoint(md) {
+            min-height: 80vh;
+        }
+
+        > .theme-image-wrapper {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .copyright {
+                display: none;
+            }
+        }
+
+        .theme-container {
+            display: flex;
+
+						.theme-grid {
+							justify-content: space-between;
+						}
+        }
+
+        .theme-text-element {
+            max-width: #{mixins.toRem(600px)};
+            width: 100%;
+
+						h1 {
+							font-size: #{mixins.toRem(60px)};
+
+							span{
+								color: #F7D17C;
+							}
+						}
+        }
+
+				//popular-blocks
+				.popular-blocks {
+            .title {
+                font-weight: 400;
+                font-size: var(--theme-fs-sm);
+                letter-spacing: -0.04em;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.5);
+                margin-bottom: #{mixins.toRem(12px)};
+            }
+
+            .wp-block-buttons {
+                gap: #{mixins.toRem(4px)};
+            }
+
+            .wp-block-button__link {
+                border: var(--theme-border-width) solid rgba(255, 255, 255, 0.25);
+                border-radius: #{mixins.toRem(30px)};
+                padding: #{mixins.toRem(7px)} #{mixins.toRem(15px)};
+                font-weight: 500;
+                font-size: var(--theme-fs-sm);
+                line-height: 1.5;
+                letter-spacing: -0.03em;
+                color: var(--wp--preset--color--white);
+                background: transparent;
+            }
+        }
+
+        // Картка маршруту
+        .profidev-hero-route-card {
+            width: #{mixins.toRem(412px)} !important;
+            background: var(--wp--preset--color--black); // Припускаю фон картки
+            border-radius: #{mixins.toRem(16px)};
+        }
+
+        .route-media {
+            position: relative;
+            width: #{mixins.toRem(412px)};
+
+            .route-badge {
+                position: absolute;
+                top: #{mixins.toRem(12px)};
+                left: #{mixins.toRem(12px)};
+                border-radius: var(--theme-br-xl);
+                padding: #{mixins.toRem(4px)} #{mixins.toRem(12px)};
+                font-weight: 600;
+                font-size: var(--theme-fs-sm);
+                line-height: 2;
+                letter-spacing: -0.03em;
+                text-transform: uppercase;
+                color: #2a4632;
+                background: var(--wp--preset--color--white);
+            }
+
+            .route-img {
+                width: #{mixins.toRem(412px)};
+                height: #{mixins.toRem(220px)};
+                border-radius: #{mixins.toRem(16px)} #{mixins.toRem(16px)} 0 0;
+                object-fit: cover;
+            }
+        }
+
+        .route-title {
+            font-weight: 400;
+            font-size: var(--theme-fs-h4);
+            letter-spacing: -0.03em;
+            color: var(--wp--preset--color--white);
+        }
+
+        .route-specs {
+            font-size: var(--theme-fs-lg);
+            line-height: var(--theme-lh-body);
+            color: var(--wp--preset--color--white);
+            gap: #{mixins.toRem(3.5px)};
+        }
+
+        .route-review {
+            border: var(--theme-border-width) solid rgba(255, 255, 255, 0.14);
+            border-radius: var(--theme-br-sm);
+            padding: #{mixins.toRem(15px)} #{mixins.toRem(20px)};
+            width: #{mixins.toRem(380px)};
+            height: #{mixins.toRem(121px)};
+
+            .review-text {
+                font-weight: 500;
+                font-size: var(--theme-fs-md);
+                line-height: 1.5;
+                letter-spacing: -0.03em;
+                color: var(--wp--preset--color--white);
+            }
+
+            .review-author {
+                font-weight: 400;
+                font-size: var(--theme-fs-sm);
+                line-height: 1.33;
+                color: rgba(255, 255, 255, 0.6);
+            }
+        }
+
+        .route-actions {
+            .theme-button-primary {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                border-radius: var(--theme-br-sm);
+                padding: #{mixins.toRem(12px)} #{mixins.toRem(24px)};
+                width: #{mixins.toRem(380px)};
+                height: #{mixins.toRem(48px)};
+                box-shadow: 0 #{mixins.toRem(10px)} #{mixins.toRem(60px)} 0 rgba(0, 0, 0, 0.1);
+                background: #eedebc;
+                color: var(--wp--preset--color--black);
+            }
+				}
+
+    }
+}
