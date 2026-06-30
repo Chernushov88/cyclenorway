@@ -133,6 +133,48 @@ $innerblocks = [
 							</div>
 						</article>
 
+						<article class="profidev-hero-route-card swiper-slide">
+
+							<div class="route-media">
+								<span class="route-badge">Most Popular</span>
+								<img src="<?php echo get_template_directory_uri() . '/assets/img/card-slide-bg.jpg'; ?>" alt="" loading="lazy" class="route-img" />
+							</div>
+							<div class="route-content">
+								<h3 class="route-title">Lofoten, Andøya, & Senja 2</h3>
+
+								<ul class="route-specs no-list">
+									<li class="spec-item">
+										<img src="<?php echo get_template_directory_uri() . '/assets/img/spec-distance.svg'; ?>" alt="" class="icon">
+										516km
+									</li>
+									<li class="spec-item ">
+										<img src="<?php echo get_template_directory_uri() . '/assets/img/spec-difficulty.svg'; ?>" alt="" class="icon">
+										7/10 difficulty
+									</li>
+									<li class="spec-item ">
+										<img src="<?php echo get_template_directory_uri() . '/assets/img/spec-duration.svg'; ?>" alt="" class="icon">
+										4-9 days
+									</li>
+								</ul>
+
+								<div class="route-review">
+									<div class="review-stars" aria-label="Rating: 5 stars">
+										<span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+									</div>
+									<p class="review-text">
+										"The route info, maps and practical advice are unbeatable — best trip of my life."
+									</p>
+									<cite class="review-author">Paul · United Kingdom</cite>
+								</div>
+
+								<div class="route-actions">
+									<a href="#" class="theme-button-primary">
+										<span>View route</span>
+									</a>
+								</div>
+							</div>
+						</article>
+
 					</div>
 					<div class="theme-slider-controls">
 						<div class="slider-button prev"></div>

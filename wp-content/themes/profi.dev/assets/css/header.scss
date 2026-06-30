@@ -5,7 +5,7 @@
     header.theme-header {
         position: relative;
         width: 100%;
-        padding: #{mixins.toRem(20px)} 0;
+        padding: #{mixins.toRem(24px)} 0;
         z-index: calc(var(--base-z-index) + 2);
 
         @include mixins.breakpoint(lg) {
@@ -34,6 +34,10 @@
             @include mixins.breakpoint(lg) {
                 padding: 0 #{mixins.toRem(30px)};
             }
+
+						@include mixins.breakpoint(md) {
+								padding: 0 #{mixins.toRem(16px)};
+						}
         }
 
         .header-wrapper {
@@ -313,7 +317,7 @@
 							}
 
 							.theme-button-primary-outline {
-								border-color: #efefef;
+								border-color: var(--wp--preset--color--color-10);;
 								border-radius: #{mixins.toRem(5px)};
 							}
 
