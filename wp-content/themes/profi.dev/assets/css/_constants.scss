@@ -6,6 +6,7 @@
 	//Theme heading font sizes
     --theme-fs-h1: #{mixins.toRem(65px)};
 	--theme-fs-h2: #{mixins.toRem(52px)};
+	--theme-fs-h2-new: #{mixins.toRem(48px)};
 	--theme-fs-h3: #{mixins.toRem(40px)};
 	--theme-fs-h4: #{mixins.toRem(34px)};
 	--theme-fs-h5: #{mixins.toRem(24px)};
@@ -23,7 +24,7 @@
 	--theme-lh-heading: 1.2;
 	--theme-lh-body: 1.4;
 	--theme-lh-body-lg: 2;
-	
+
 	//Text letter spacing
 	--theme-ls-tight: ;
 	--theme-ls-wide: ;
@@ -39,7 +40,7 @@
 	--theme-container-width: #{mixins.toRem(1200px)};
 	--theme-container-padding: #{mixins.toRem(50px)};
 
-	--theme-section-gap: #{mixins.toRem(100px)};
+	--theme-section-gap: #{mixins.toRem(80px)};
 	--theme-route-section-gap: #{mixins.toRem(70px)};
 
 	//Transition

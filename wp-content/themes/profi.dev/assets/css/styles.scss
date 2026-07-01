@@ -344,9 +344,20 @@
 		}
 
 		&-title {
-			margin: 0 0 #{mixins.toRem(35px)};
-			font-size: var(--theme-fs-h3);
-			font-weight: 500;
+			margin: 0 0 #{mixins.toRem(36px)};
+			font-size: var(--theme-fs-h2-new);
+			font-weight: 400;
+    	letter-spacing: -0.05em;
+			line-height: 1;
+
+			@include mixins.breakpoint(md) {
+				margin-bottom: #{mixins.toRem(24px)};
+			}
+
+			@include mixins.breakpoint(md) {
+				font-size: #{mixins.toRem(30px)};
+				margin-bottom: #{mixins.toRem(16px)};
+			}
 		}
 
 		&-button {

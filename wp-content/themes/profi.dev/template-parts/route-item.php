@@ -41,6 +41,8 @@ $access_status = is_user_logged_in() ? 'full' : 'must-login';
 				<li class="route-difficulty"><?php echo $overview_heading_table['difficulty']; ?> <?php echo __('difficulty', 'profidev-theme'); ?></li>
 			<?php endif; ?>
 		</ul>
+	</div>
+	<div class="route-footer">
 		<div class="route-btns">
 			<?php if (!empty($overview_header_card['full_story']) &&
 				get_post_status($overview_header_card['full_story']) === 'publish'): ?>
@@ -56,4 +58,5 @@ $access_status = is_user_logged_in() ? 'full' : 'must-login';
 			<p class="route-notice"><?php echo wp_kses_post($fields['overview_notice']); ?></p>
 		<?php endif; ?>
 	</div>
+
 </div>

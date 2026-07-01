@@ -1,49 +1,251 @@
 @use "sass:map";
 @use "~css/_mixins.scss" as mixins;
 
+* {
+	// outline: 1px solid;
+}
+
 %block {
-    .profidev-route-tabs {
-        margin: var(--theme-section-gap) 0;
+	.profidev-route-tabs {
+		margin: var(--theme-section-gap) 0;
 
-        .route-list {
-            position: relative;
+		.route-list {
+			position: relative;
 
-            &::after {
-                content: "";
-                position: absolute;
-                inset: 0;
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                background-color: rgba(255, 255, 255, 0.5);
-                backdrop-filter: blur(3px);
-                z-index: calc(var(--base-z-index) + 1);
-                pointer-events: none;
-                transition: opacity var(--theme-transition);
-            }
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				background-color: rgba(255, 255, 255, 0.5);
+				backdrop-filter: blur(3px);
+				z-index: calc(var(--base-z-index) + 1);
+				pointer-events: none;
+				transition: opacity var(--theme-transition);
+			}
 
-            &.loading::after {
-                opacity: 1;
-                pointer-events: all;
-            }
-        }
+			&.loading::after {
+				opacity: 1;
+				pointer-events: all;
+			}
+		}
 
-        .route-buttons {
-            display: flex;
-            align-items: center;
-            gap: #{mixins.toRem(24px)};
-            margin-bottom: #{mixins.toRem(32px)};
-            width: 100%;
-            overflow-y: auto;
+		.route-buttons {
+			display: flex;
+			align-items: center;
+			gap: #{mixins.toRem(24px)};
+			margin-bottom: #{mixins.toRem(32px)};
+			width: 100%;
+			overflow-y: auto;
 
-            > button.no-btn {
-                padding: #{mixins.toRem(10px)};
-            }
-        }
+			> button.no-btn {
+				padding: #{mixins.toRem(10px)};
+			}
+		}
 
-        .theme-button-primary-outline[data-type="load-more"],
-        .all-routes {
-            margin: #{mixins.toRem(56px)} auto 0;
-        }
-    }
+		.theme-button-primary-outline[data-type="load-more"],
+		.all-routes {
+			margin: #{mixins.toRem(56px)} auto 0;
+		}
+
+		&.template-2 {
+			.theme-container {
+				position: relative;
+			}
+
+			.top-element {
+				padding-bottom: mixins.toRem(16px);
+
+				.wp-element-button {
+					font-weight: 600;
+					font-size: var(--theme-fs-sm);
+					line-height: var(--theme-lh-body-lg);
+					letter-spacing: var(--theme-letter-spacing-sm);
+					text-transform: uppercase;
+					color: var(--wp--preset--color--color-12);
+					border-radius: var(--theme-border-radius-full);
+					padding: mixins.toRem(4px) mixins.toRem(12px);
+					background: rgba(113, 141, 121, 0.1);
+				}
+			}
+
+			.all-routes {
+				position: absolute;
+				right: var(--theme-container-padding);
+				top: mixins.toRem(-30px);
+				background: var(--wp--preset--color--white);
+				border: 1px solid var(--wp--preset--color--color-10);
+				border-radius: var(--theme-border-radius-sm);
+				padding: mixins.toRem(12px) mixins.toRem(24px);
+				font-weight: 500;
+				font-size: var(--theme-fs-base);
+				line-height: 1.3125;
+				letter-spacing: var(--theme-letter-spacing-md);
+				text-align: center;
+				color: var(--wp--preset--color--black);
+
+				@include mixins.breakpoint(md) {
+					position: static;
+					width: 100%;
+					font-size: var(--theme-fs-xs);
+					line-height: 1.5;
+				}
+
+				@include mixins.breakpoint(sm) {
+					margin-top: mixins.toRem(16px);
+				}
+			}
+
+			.route-buttons {
+				margin-bottom: mixins.toRem(36px);
+				gap: mixins.toRem(4px);
+
+				@include mixins.breakpoint(md) {
+					margin-bottom: mixins.toRem(24px);
+				}
+
+				.no-btn {
+					border: 1px solid var(--wp--preset--color--color-10);
+					border-radius: var(--theme-border-radius-sm);
+					padding: mixins.toRem(9px) mixins.toRem(18px);
+					background: var(--wp--preset--color--white);
+					font-weight: 500;
+					font-size: var(--theme-fs-base);
+					line-height: 1.5;
+					letter-spacing: var(--theme-letter-spacing-sm);
+					color: var(--wp--preset--color--black);
+					white-space: nowrap;
+
+					&.active {
+						background: var(
+							--wp--preset--color--color-primary
+						); // Замінено на колір теми
+						color: var(--wp--preset--color--white);
+					}
+
+					@include mixins.breakpoint(md) {
+						border-radius: var(--theme-border-radius-lg);
+						padding: mixins.toRem(9px) mixins.toRem(18px);
+					}
+
+					@include mixins.breakpoint(sm) {
+						font-size: var(--theme-fs-xs);
+					}
+				}
+			}
+
+			.route-list {
+				--horizontal-gap: 1rem;
+				--vertical-gap: 2rem;
+
+				@include mixins.breakpoint(sm) {
+					display: flex;
+					flex-wrap: nowrap;
+					gap: 1rem;
+					overflow-x: auto;
+					-webkit-overflow-scrolling: touch;
+					scroll-snap-type: x mandatory;
+					padding-bottom: mixins.toRem(10px);
+				}
+
+				.item {
+					@include mixins.breakpoint(sm) {
+						flex: 0 0 auto;
+						width: mixins.toRem(313px);
+						scroll-snap-align: start;
+					}
+				}
+			}
+
+			.theme-route-item {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				border: 1px solid var(--wp--preset--color--color-10);
+				border-radius: var(--theme-border-radius-md);
+				padding: mixins.toRem(14px) mixins.toRem(14px) 0;
+				background: rgba(248, 247, 244, 0.7);
+
+				@include mixins.breakpoint(sm) {
+					padding: 0;
+				}
+
+				.route-image {
+					img {
+						border-radius: var(--theme-border-radius-xs);
+						width: mixins.toRem(86px);
+						height: mixins.toRem(86px);
+
+						@include mixins.breakpoint(sm) {
+							width: 100%;
+							height: auto;
+							border-radius: 0;
+						}
+					}
+
+					.copyright {
+						display: none;
+					}
+				}
+
+				.route-content {
+					max-width: calc(100% - #{mixins.toRem(86px)});
+					padding: 0 0 mixins.toRem(6px) mixins.toRem(12px);
+
+					@include mixins.breakpoint(sm) {
+						max-width: 100%;
+						height: auto;
+						padding: mixins.toRem(21px) mixins.toRem(10px) 0;
+					}
+
+					.route-title {
+						font-weight: 600;
+						font-size: mixins.toRem(22px);
+						line-height: 1.14;
+					}
+				}
+
+				.route-footer {
+					width: 100%;
+					text-align: center;
+
+					@include mixins.breakpoint(sm) {
+						padding: 0 mixins.toRem(10px);
+					}
+				}
+
+				.route-btns {
+					padding-bottom: 0;
+
+					[class*="theme-button"] {
+						border-radius: var(--theme-border-radius-sm);
+						padding-block: mixins.toRem(9px);
+						font-weight: 400;
+						font-size: var(--theme-fs-xs);
+
+						&[data-tooltip] {
+							position: relative;
+						}
+					}
+
+					.theme-button-primary {
+						background: rgba(237, 223, 188, 0.4);
+						border: 1px solid #eddfbc; // Якщо цей колір специфічний, можна залишити, або додати в константи
+					}
+				}
+
+				.route-notice {
+					margin-bottom: mixins.toRem(-18px);
+					font-weight: 500;
+					font-size: var(--theme-fs-xs);
+
+					@include mixins.breakpoint(md) {
+						display: inline-block;
+					}
+				}
+			}
+		}
+	}
 }

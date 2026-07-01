@@ -24,7 +24,7 @@ $innerblocks = [
 $id = $block['anchor'] ?? uniqid();
 $fields = get_fields();
 $attributes = get_block_wrapper_attributes(['class' => join(' ', [
-	'profidev-route-tabs',
+	'profidev-route-tabs template-2',
 	!empty($fields['margin']) && is_array($fields['margin']) ? join(' ', $fields['margin']) : '',
 ]), 'id' => $id]);
 
@@ -45,6 +45,9 @@ if (get_queried_object() instanceof WP_Term) {
 <section <?php echo $attributes; ?>>
 	<route-map-tabs>
 		<div class="theme-container">
+			<div class="top-element">
+				<a class="wp-block-button__link wp-element-button">EXPLORE ROUTES</a>
+			</div>
 			<?php if (!$hide_title): ?>
 				<h2 class="theme-title"><?php _e('Routes', 'profidev-theme') ?></h2>
 			<?php endif; ?>
@@ -69,7 +72,7 @@ if (get_queried_object() instanceof WP_Term) {
 				</div>
 			</profidev-theme-tabs>
 		</div>
-		
+
 		<InnerBlocks class="theme-maps-tabs" allowedBlocks="<?php echo esc_attr(json_encode($innerblocks)); ?>" />
 	</route-map-tabs>
 </section>
