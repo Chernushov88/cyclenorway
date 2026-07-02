@@ -341,9 +341,7 @@
 								border-radius: 0;
 							}
 
-
 							.wrapper {
-
 								.theme-text-element{
 									* {
 										margin: 16px 0;
@@ -430,24 +428,13 @@
 										max-width: 504px;
 									}
 
-									// @include mixins.breakpoint(sm) {
-									// 	w100%
-									// }
-
 									.theme-image-wrapper{
 										img{
 
 										}
 									}
 								}
-
-
-
-
-
 							}
-
-
 
 							.bg-image{
 								position: absolute;
