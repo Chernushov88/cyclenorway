@@ -140,47 +140,98 @@ if (!empty($fields['rounded_image'])) {
 
 if (!empty($fields['margin'])) {
 	$class_name[] = is_array( $fields['margin'] ) ? join( ' ', $fields['margin'] ) : '';
-} ?>
+}
+if (in_array('template-3', $class_name)) {
+	$template3_sm = 'no-padding';
+}
+?>
+
+
+
 
 <section <?php echo $anchor; ?> class="profidev-text-image">
-	<div class="theme-container">
-		<div class="<?php echo esc_attr(join(' ', $class_name)); ?>" <?php echo $style; ?>>
-			<div class="wrapper" <?php echo $width_vars; ?>>
-				<div class="text-wrapper">
-					<InnerBlocks class="theme-text-element" allowedBlocks="<?php echo esc_attr(json_encode($innerblocks)); ?>" template="<?php echo esc_attr(json_encode($innerTemplate)); ?>" />
-				</div>
-				<?php if(!empty($fields['image']) || !empty($fields['embed_link'])): ?>
-				<div class="<?php echo esc_attr(join(' ', $image_template)); ?>">
-					<?php if(!empty($fields['image'])): ?>
-						<?php echo wp_get_attachment_image($fields['image'], 'full', '', ['loading' => 'lazy']); ?>
-					<?php endif; ?>
+	<div class="theme-container <?php echo $template3_sm ?>">
+		<div class="<?php echo esc_attr(join(' ', $class_name)); ?> has-color-14-background-color" <?php echo $style; ?>>
+			<?php if (in_array('template-3', $class_name)): ?>
+					<div class="wrapper" style="--content-width: 50%; --images-width: 50%">
+						<div class="text-wrapper">
+							<div class="theme-text-element">
+								<p class="over-title">ITINERARIES</p>
+								<h2 class="wp-block-heading">Complete flexibility self-guided cycling holidays</h2>
 
-					<?php if(!empty($fields['embed_link'])): ?>
-						<iframe width="560" height="315"
-						src="<?php echo esc_url($fields['embed_link']); ?>"
-						<?php if(!empty($fields['title_for_iframe'])): ?>
-						title="<?php echo esc_attr($fields['title_for_iframe']); ?>"
-						<?php endif; ?>
-						loading="lazy"
-						frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						referrerpolicy="strict-origin-when-cross-origin"
-						allowfullscreen></iframe>
-					<?php endif; ?>
+								<ul class="list-with-icon">
+									<li>
+										<img src="<?php echo get_template_directory_uri() . '/assets/img/routs-icon-1.svg'; ?>" >
+										Where to stay
+									</li>
+									<li>
+										<img src="<?php echo get_template_directory_uri() . '/assets/img/routs-icon-2.svg'; ?>" >
+										Daily Itineraries
+									</li>
+									<li>
+										<img src="<?php echo get_template_directory_uri() . '/assets/img/routs-icon-3.png'; ?>" >
+										Talk-through videos
+									</li>
+								</ul>
 
-					<?php if(!empty($fields['texts_on_image'])): ?>
-						<div class="content <?php echo count($fields['texts_on_image']) === 2 ? 'two-columns' : ''; ?>">
-							<?php foreach($fields['texts_on_image'] as $text_item): ?>
-								<div class="theme-text-element">
-									<p class="text"><?php echo esc_html($text_item['text']); ?></p>
-									<p class="price"><?php echo esc_html($text_item['price']); ?></p>
+								<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+									<div class="wp-block-button is-style-primary-btn">
+										<a class="wp-block-button__link wp-element-button has-color-12-background-color" href="#">Explore Itineraries</a></div>
 								</div>
-							<?php endforeach; ?>
+							</div>
 						</div>
+
+						<div class="media images">
+							<div class="theme-image-wrapper">
+								<img src="<?php echo get_template_directory_uri() . '/assets/img/text-images-template-3-routes.png'; ?>" alt=""  />
+							</div>
+						</div>
+
+					</div>
+					<picture class="bg-image">
+						<source srcset="<?php echo get_template_directory_uri() . '/assets/img/testimonial-band.jpg'; ?>" media="(min-width: 769px)">
+						<img src="<?php echo get_template_directory_uri() . '/assets/img/testimonial-band-md.jpg'; ?>" alt=""  />
+					</picture>
+				</div>
+
+				<?php else: ?>
+				<div class="wrapper" <?php echo $width_vars; ?>>
+					<div class="text-wrapper">
+						<InnerBlocks class="theme-text-element" allowedBlocks="<?php echo esc_attr(json_encode($innerblocks)); ?>" template="<?php echo esc_attr(json_encode($innerTemplate)); ?>" />
+					</div>
+					<?php if(!empty($fields['image']) || !empty($fields['embed_link'])): ?>
+					<div class="<?php echo esc_attr(join(' ', $image_template)); ?>">
+						<?php if(!empty($fields['image'])): ?>
+							<?php echo wp_get_attachment_image($fields['image'], 'full', '', ['loading' => 'lazy']); ?>
+						<?php endif; ?>
+
+						<?php if(!empty($fields['embed_link'])): ?>
+							<iframe width="560" height="315"
+							src="<?php echo esc_url($fields['embed_link']); ?>"
+							<?php if(!empty($fields['title_for_iframe'])): ?>
+							title="<?php echo esc_attr($fields['title_for_iframe']); ?>"
+							<?php endif; ?>
+							loading="lazy"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen></iframe>
+						<?php endif; ?>
+
+						<?php if(!empty($fields['texts_on_image'])): ?>
+							<div class="content <?php echo count($fields['texts_on_image']) === 2 ? 'two-columns' : ''; ?>">
+								<?php foreach($fields['texts_on_image'] as $text_item): ?>
+									<div class="theme-text-element">
+										<p class="text"><?php echo esc_html($text_item['text']); ?></p>
+										<p class="price"><?php echo esc_html($text_item['price']); ?></p>
+									</div>
+								<?php endforeach; ?>
+							</div>
+						<?php endif; ?>
+					</div>
 					<?php endif; ?>
 				</div>
-				<?php endif; ?>
-			</div>
+			<?php endif; ?>
 		</div>
 	</div>
 </section>

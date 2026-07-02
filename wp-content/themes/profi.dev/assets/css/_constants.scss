@@ -115,10 +115,13 @@
 
 		--theme-section-gap: #{mixins.toRem(65px)};
 		--theme-route-section-gap: #{mixins.toRem(40px)};
+
+		--theme-container-padding: #{mixins.toRem(30px)};
 	}
 
 	@include mixins.breakpoint(sm) {
 		--theme-container-padding: #{mixins.toRem(20px)};
+		--theme-fs-h2-new: #{mixins.toRem(30px)};
 	}
 
 	@include mixins.breakpoint(782px) {
