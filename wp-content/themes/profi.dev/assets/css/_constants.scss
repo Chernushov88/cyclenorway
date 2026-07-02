@@ -40,7 +40,8 @@
 	--theme-container-width: #{mixins.toRem(1200px)};
 	--theme-container-padding: #{mixins.toRem(50px)};
 
-	--theme-section-gap: #{mixins.toRem(80px)};
+	--theme-section-gap: #{mixins.toRem(100px)};
+	--theme-new-section-gap: #{mixins.toRem(80px)};
 	--theme-route-section-gap: #{mixins.toRem(70px)};
 
 	//Transition

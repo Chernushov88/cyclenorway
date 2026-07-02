@@ -51,6 +51,8 @@
 		}
 
 		&.template-2 {
+			margin: var(--theme-new-section-gap) 0;
+
 			.theme-container {
 				position: relative;
 			}
@@ -201,9 +203,23 @@
 					}
 
 					.route-title {
+						margin: 0 0 #{mixins.toRem(36px)};
+						font-size: var(--theme-fs-h2-new);
+						font-weight: 400;
+						letter-spacing: -0.05em;
+						line-height: 1;
 						font-weight: 600;
 						font-size: mixins.toRem(22px);
 						line-height: 1.14;
+
+						@include mixins.breakpoint(md) {
+						margin-bottom: #{mixins.toRem(24px)};
+						}
+
+						@include mixins.breakpoint(md) {
+						font-size: #{mixins.toRem(30px)};
+						margin-bottom: #{mixins.toRem(16px)};
+						}
 					}
 				}
 
